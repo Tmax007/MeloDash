@@ -24,7 +24,8 @@ public class LaneCollection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position != lanes[currentLane].transform.position)
+        // Add boundary check before accessing the lanes array
+        if (currentLane >= 0 && currentLane < lanes.Length && transform.position != lanes[currentLane].transform.position)
         {
             sinTime += Time.deltaTime * movSpeed;
             sinTime = Mathf.Clamp(sinTime, 0, Mathf.PI);
@@ -39,13 +40,13 @@ public class LaneCollection : MonoBehaviour
             moving = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.A) && currentLane > 0 && moving == false)
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) && currentLane > 0 && moving == false)
         {
             sinTime = 0f;
             currentLane--;
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && currentLane < lanes.Length - 1 && moving == false)
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && currentLane < lanes.Length - 1 && moving == false)
         {
             sinTime = 0f;
             currentLane++;
