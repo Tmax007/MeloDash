@@ -39,4 +39,9 @@ public class Health : MonoBehaviour
         }
 
     }
+
+    void healthIncrease()
+    {
+        healthNum++;
+    }
 }
