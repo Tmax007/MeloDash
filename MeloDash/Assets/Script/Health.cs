@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log(collision.gameObject.layer);
+        //Debug.Log(collision.gameObject.layer);
 
         if (collision.gameObject.layer == LayerMask.NameToLayer(damageSourceLayer))
         {
