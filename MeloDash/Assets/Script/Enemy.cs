@@ -7,6 +7,18 @@ public class Enemy : MonoBehaviour
 
     private bool reachedSnapPoint = false;
 
+    public ScoreManager scoreManager;
+
+    void Start()
+    {
+        // Find the ScoreManager GameObject and get its ScoreManager component
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+        if (scoreManager == null)
+        {
+            Debug.LogError("ScoreManager not found in the scene.");
+        }
+    }
+
     // Set destination point for enemy to move towards
     public void SetDestination(Vector3 destination)
     {
@@ -31,6 +43,9 @@ public class Enemy : MonoBehaviour
             if (transform.position == destination)
             {
                 reachedSnapPoint = true;
+
+                // Update the score when the enemy reaches the snap point
+                scoreManager.UpdateScore();
             }
         }
         else
