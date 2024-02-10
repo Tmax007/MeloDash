@@ -10,9 +10,12 @@ public class Health : MonoBehaviour
 
     public string damageSourceLayer;
 
+    //regenHealth is a public boolean that can be toggled in the inspector to enable/disable regenerating health.
     public bool regenHealth;
+    //regenerating is used for script logic to determine when entity is currently regenerating health.
     bool regenerating;
 
+    //regenTime determines the length of time needed for an entity to regenerate 1 health.
     public float regenTime;
     float currentTime = 0;
 
@@ -57,11 +60,6 @@ public class Health : MonoBehaviour
 
     }
 
-    void healthIncrease()
-    {
-        healthNum++;
-    }
-
     void healthRegeneration()
     {
         currentTime += Time.deltaTime;
@@ -71,7 +69,7 @@ public class Health : MonoBehaviour
         if (currentTime >= regenTime) 
         {
             currentTime = 0;
-            healthIncrease(); 
+            healthNum++;
 
         }
 
