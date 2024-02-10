@@ -1981,6 +1981,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthNum: 3
   damageSourceLayer: Enemy
+  regenHealth: 1
+  regenTime: 5
 --- !u!58 &1511993938
 CircleCollider2D:
   m_ObjectHideFlags: 0

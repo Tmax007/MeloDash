@@ -6,14 +6,21 @@ public class Health : MonoBehaviour
 {
 
     public int healthNum;
+    int maxHealth;
 
     public string damageSourceLayer;
 
+    public bool regenHealth;
+    bool regenerating;
+
+    public float regenTime;
+    float currentTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        maxHealth = healthNum;
+        regenerating = false;
     }
 
     // Update is called once per frame
@@ -23,6 +30,14 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(regenerating && regenHealth)
+        {
+            healthRegeneration();
+        }
+
+        //Debug.Log(regenerating);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +51,8 @@ public class Health : MonoBehaviour
 
             healthNum--;
 
+            regenerating = true;
+
         }
 
     }
@@ -43,5 +60,25 @@ public class Health : MonoBehaviour
     void healthIncrease()
     {
         healthNum++;
+    }
+
+    void healthRegeneration()
+    {
+        currentTime += Time.deltaTime;
+        
+        //Debug.Log(currentTime);
+
+        if (currentTime >= regenTime) 
+        {
+            currentTime = 0;
+            healthIncrease(); 
+
+        }
+
+        if(healthNum == maxHealth)
+        {
+            currentTime = 0;
+            regenerating = false;
+        }
     }
 }
