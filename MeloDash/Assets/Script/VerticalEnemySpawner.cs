@@ -4,24 +4,42 @@ using UnityEngine;
 
 public class VerticalEnemySpawner : MonoBehaviour
 {
-    public Transform snapPoint;
-    public GameObject enemyPrefab;
-    public float spawnInterval = 2.0f;
-    public float descentSpeed = 2.0f;
+    public Transform[] lanes;
+    public GameObject[] enemyPrefabs;
+    public float[] laneSpawnRates; // Adjust spawn rates per lane\po
 
+    public Transform snapPoint; // Snap point for vertical enemy spawner
+    public GameObject enemyPrefab; // Prefab for vertical enemy spawner
+    public float spawnInterval = 2.0f; // Spawn interval for vertical enemy spawner
+    public float descentSpeed = 2.0f; // Descent speed for vertical enemy spawner
+
+    private float[] laneTimers;
     private float spawnTimer = 0;
+
+    void Start()
+    {
+        laneTimers = new float[lanes.Length];
+    }
 
     void Update()
     {
+       // UpdateVerticalEnemySpawner();
+    }
+
+    void UpdateVerticalEnemySpawner()
+    {
+        // Increment spawn timer for vertical enemy spawner
         spawnTimer += Time.deltaTime;
+
+        // Check if it's time to spawn an enemy vertically
         if (spawnTimer >= spawnInterval)
         {
-            SpawnEnemy();
+            SpawnVerticalEnemy();
             spawnTimer = 0;
         }
     }
 
-    void SpawnEnemy()
+    public void SpawnVerticalEnemy()
     {
         // Instantiate a new enemy at the spawner's position
         GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);

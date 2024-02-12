@@ -24,13 +24,13 @@ public class Projectile : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.1f, enemyLayer);
         foreach (Collider2D hit in hits)
         {
-            //TO ADI: DESTROY COMMANDS DISABLED DUE TO DESTRUCTIBLE ENEMIES & HOW THEY USE THE SAME HEALTH SCRIPT AS THE PLAYER. UNCOMMENT THEM IF YOU'D LIKE
-            //REGULAR ENEMIES TO TO BE DESTROYABLE AGAIN.
-            // Destroy the enemy
-            //Destroy(hit.gameObject);
+            // TO SHAUN: Just changed the layer for the destructible enemy so that only it will be destroyed
 
-            // Destroy the projectile
-            //Destroy(gameObject);
+            // Destroy the enemy
+            Destroy(hit.gameObject);
+
+            //Destroy the projectile
+            Destroy(gameObject);
         }
     }
 }
