@@ -1,16 +1,16 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BeatManager : MonoBehaviour
 {
-    // Beat and timestamp of the beat in seconds.millisecond format. Values are separated by a dot
-    public string[] beatTimestamps;
+    // List to store beat data (timestamp and associated enemy spawner index)
+    public List<BeatTimestampLoader.BeatData> beatDataList;
 
     private float songStartTime;
-    // Index of the current beat
     private int currentBeatIndex;
 
-    // Reference to the enemy spawner
-    public VerticalEnemySpawner[] enemySpawners;
+    // Reference to the enemy spawners
+    public List<VerticalEnemySpawner> enemySpawners;
 
     void Start()
     {
@@ -23,53 +23,70 @@ public class BeatManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("BeatManager Update method called.");
         // Calculate the current song time
         float currentTime = Time.time - songStartTime;
 
-        // Check if the current time matches the next beat timestamp
-        if (currentBeatIndex < beatTimestamps.Length && currentTime >= ParseTimeStamp(beatTimestamps[currentBeatIndex]))
-        {
-            // Trigger an action at this beat (e.g., spawn an enemy)
-            SpawnEnemy();
+        // Debug log for current and next beat timestamps
+        Debug.Log("Current time: " + currentTime + ", Next beat timestamp: " + beatDataList[currentBeatIndex].timestamp);
 
-            // Move to the next beat
-            currentBeatIndex++;
+        Debug.Log("Current beat index: " + currentBeatIndex + ", Beat data count: " + beatDataList.Count);
+
+        // Debug log for spawning enemy
+        Debug.Log("Spawning enemy for beat index: " + currentBeatIndex);
+
+
+        // Check if the current time matches the next beat timestamp
+        if (currentBeatIndex < beatDataList.Count && currentTime >= beatDataList[currentBeatIndex].timestamp)
+        {
+            Debug.Log("Current time: " + currentTime + ", Next beat timestamp: " + beatDataList[currentBeatIndex].timestamp);
+
+            // Ensure that the current beat index is valid
+            if (currentBeatIndex >= 0 && currentBeatIndex < beatDataList.Count)
+            {
+                Debug.Log("Spawning enemy for beat index: " + currentBeatIndex);
+
+                // Trigger an action at this beat (e.g., spawn an enemy)
+                SpawnEnemy(currentBeatIndex);
+
+                // Move to the next beat
+                currentBeatIndex++;
+            }
+            else
+            {
+                Debug.LogError("Invalid beat index: " + currentBeatIndex);
+            }
+        }
+    }
+
+    void SpawnEnemy(int beatIndex)
+    {
+        // Get the associated enemy spawner index for this beat
+        int spawnerIndex = beatDataList[beatIndex].spawnerIndex;
+
+        Debug.Log("Spawning enemy at spawner index: " + spawnerIndex);
+
+        // Ensure that the enemySpawners list is not null and contains the spawner index
+        if (enemySpawners != null && spawnerIndex >= 0 && spawnerIndex < enemySpawners.Count && enemySpawners[spawnerIndex] != null)
+        {
+            // Spawn an enemy using the corresponding enemy spawner
+            enemySpawners[spawnerIndex].SpawnVerticalEnemy();
+        }
+        else
+        {
+            Debug.LogError("Invalid enemy spawner reference for beat index: " + beatIndex);
         }
     }
 
     void PlaySong()
     {
+        // Add a debug log to indicate that the PlaySong method is being called
+        Debug.Log("PlaySong method called.");
+
         // Play the song (e.g., using AudioSource.Play)
         songStartTime = Time.time; // Record the start time of the song
-    }
 
-    void SpawnEnemy()
-    {
-        // Spawn an enemy using the enemy spawner
-        if (enemySpawners != null)
-        {
-            foreach (VerticalEnemySpawner spawner in enemySpawners)
-            {
-                spawner.SpawnVerticalEnemy();
-            }
-        }
-        else
-        {
-            Debug.LogError("EnemySpawner reference is missing!");
-        }
-    }
-
-    float ParseTimeStamp(string timestamp)
-    {
-        string[] parts = timestamp.Split('.');
-        if (parts.Length == 2 && float.TryParse(parts[0], out float seconds) && float.TryParse(parts[1], out float milliseconds))
-        {
-            return seconds + milliseconds / 1000f; // Convert milliseconds to seconds
-        }
-        else
-        {
-            Debug.LogError("Invalid timestamp format: " + timestamp);
-            return 0f;
-        }
+        // Add a debug log to print the song start time
+        Debug.Log("Song start time: " + songStartTime);
     }
 }

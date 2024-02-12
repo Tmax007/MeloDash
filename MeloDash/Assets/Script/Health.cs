@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public int healthNum;
     int maxHealth;
 
-    public string damageSourceLayer;
+    public LayerMask damageSourceLayer;
 
     //regenHealth is a public boolean that can be toggled in the inspector to enable/disable regenerating health.
     public bool regenHealth;
@@ -45,19 +45,13 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        //Debug.Log(collision.gameObject.layer);
-
-        if (collision.gameObject.layer == LayerMask.NameToLayer(damageSourceLayer))
+        // Check if the collided object is on the damageSourceLayer
+        if (damageSourceLayer == (damageSourceLayer | (1 << collision.gameObject.layer)))
         {
             Destroy(collision.gameObject);
-
             healthNum--;
-
             regenerating = true;
-
         }
-
     }
 
     void healthRegeneration()

@@ -123,6 +123,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &69263357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69263358}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &69263358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69263357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.857833, y: 8.871549, z: -0.040739052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1651797079}
+  - {fileID: 1316496982}
+  - {fileID: 1094845183}
+  - {fileID: 1714456948}
+  - {fileID: 722031430}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140528712
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,13 +487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8e94aa0ca97a247b5e33d25a0de1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes: []
-  enemyPrefabs: []
-  laneSpawnRates: []
   snapPoint: {fileID: 1413250449}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  spawnInterval: 3
   descentSpeed: 3
+  spawnerIndex: 4
 --- !u!212 &722031429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -518,12 +551,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722031427}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.857833, y: 3.1284513, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &741098180
 GameObject:
@@ -788,6 +821,7 @@ GameObject:
   - component: {fileID: 1094845183}
   - component: {fileID: 1094845182}
   - component: {fileID: 1094845181}
+  - component: {fileID: 1094845184}
   m_Layer: 0
   m_Name: EnemySpawner3
   m_TagString: Untagged
@@ -807,13 +841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8e94aa0ca97a247b5e33d25a0de1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes: []
-  enemyPrefabs: []
-  laneSpawnRates: []
   snapPoint: {fileID: 1119333980}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  spawnInterval: 4
   descentSpeed: 6
+  spawnerIndex: 2
 --- !u!212 &1094845182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -874,13 +905,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094845180}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.857833, y: 3.1284513, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1094845184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094845180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanes:
+  - {fileID: 579460431}
+  - {fileID: 741098181}
+  - {fileID: 1119333980}
+  - {fileID: 1125497879}
+  - {fileID: 1413250449}
+  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  laneSpawnRates:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 2
+  descentSpeed: 2
 --- !u!1 &1119333979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,13 +1432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8e94aa0ca97a247b5e33d25a0de1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes: []
-  enemyPrefabs: []
-  laneSpawnRates: []
   snapPoint: {fileID: 741098181}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  spawnInterval: 3
   descentSpeed: 5
+  spawnerIndex: 1
 --- !u!212 &1316496981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1442,12 +1496,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316496979}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.857833, y: 3.1284513, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377078390
 GameObject:
@@ -1989,7 +2043,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthNum: 3
-  damageSourceLayer: Enemy
+  damageSourceLayer:
+    serializedVersion: 2
+    m_Bits: 320
   regenHealth: 1
   regenTime: 5
 --- !u!58 &1511993938
@@ -2151,12 +2207,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651797076}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8578329, y: 3.1284513, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1651797080
 MonoBehaviour:
@@ -2170,19 +2226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8e94aa0ca97a247b5e33d25a0de1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 579460431}
-  - {fileID: 741098181}
-  - {fileID: 1119333980}
-  - {fileID: 1125497879}
-  - {fileID: 1413250449}
-  enemyPrefabs:
-  - {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  laneSpawnRates: []
   snapPoint: {fileID: 579460431}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  spawnInterval: 2
   descentSpeed: 2
+  spawnerIndex: 0
 --- !u!1 &1655436980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,13 +2394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8e94aa0ca97a247b5e33d25a0de1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes: []
-  enemyPrefabs: []
-  laneSpawnRates: []
   snapPoint: {fileID: 1125497879}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  spawnInterval: 2
   descentSpeed: 3
+  spawnerIndex: 3
 --- !u!212 &1714456947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2414,8 +2458,60 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714456945}
   serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.857833, y: 3.1284513, z: 0.040739052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 69263358}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752567727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752567729}
+  - component: {fileID: 1752567728}
+  m_Layer: 0
+  m_Name: TimestampLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1752567728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752567727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edd9ba2112ad1346b1cf275b076073c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatTimestampsCSV: {fileID: 4900000, guid: 612aed39f08fcb84e90a373068c646bb, type: 3}
+  beatDataList: []
+  enemySpawners:
+  - {fileID: 1651797080}
+  - {fileID: 1316496980}
+  - {fileID: 1094845181}
+  - {fileID: 1714456946}
+  - {fileID: 722031428}
+--- !u!4 &1752567729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752567727}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 6, z: 0}
+  m_LocalPosition: {x: -7.857833, y: 8.697344, z: -0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2817,148 +2913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b103d042f286d478b5f6e774b70c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTimestamps:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  beatDataList: []
   enemySpawners:
   - {fileID: 1651797080}
   - {fileID: 1316496980}
@@ -3080,12 +3035,9 @@ SceneRoots:
   - {fileID: 1768749308}
   - {fileID: 1377078391}
   - {fileID: 1827395873}
-  - {fileID: 1651797079}
-  - {fileID: 1316496982}
-  - {fileID: 1094845183}
-  - {fileID: 1714456948}
-  - {fileID: 722031430}
-  - {fileID: 1212429547}
-  - {fileID: 1937623446}
+  - {fileID: 69263358}
   - {fileID: 611046102}
   - {fileID: 2094379292}
+  - {fileID: 1752567729}
+  - {fileID: 1937623446}
+  - {fileID: 1212429547}

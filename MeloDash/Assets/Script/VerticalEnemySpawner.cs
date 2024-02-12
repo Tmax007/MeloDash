@@ -1,46 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class VerticalEnemySpawner : MonoBehaviour
 {
-    public Transform[] lanes;
-    public GameObject[] enemyPrefabs;
-    public float[] laneSpawnRates; // Adjust spawn rates per lane\po
+    public Transform snapPoint;
+    public GameObject enemyPrefab;
+    public float descentSpeed = 2.0f;
 
-    public Transform snapPoint; // Snap point for vertical enemy spawner
-    public GameObject enemyPrefab; // Prefab for vertical enemy spawner
-    public float spawnInterval = 2.0f; // Spawn interval for vertical enemy spawner
-    public float descentSpeed = 2.0f; // Descent speed for vertical enemy spawner
+    private float[] beatTimestamps; // Array to store beat timestamps
+    private int currentBeatIndex = 0; // Index of the current beat
 
-    private float[] laneTimers;
-    private float spawnTimer = 0;
+    // Index of the spawner
+    public int spawnerIndex;
 
     void Start()
     {
-        laneTimers = new float[lanes.Length];
+        // I'll initialize it with an empty array
+        beatTimestamps = new float[0];
+
+        Debug.Log("VerticalEnemySpawner Start method called.");
     }
 
     void Update()
     {
-       // UpdateVerticalEnemySpawner();
-    }
+        Debug.Log("VerticalEnemySpawner Update method called.");
 
-    void UpdateVerticalEnemySpawner()
-    {
-        // Increment spawn timer for vertical enemy spawner
-        spawnTimer += Time.deltaTime;
-
-        // Check if it's time to spawn an enemy vertically
-        if (spawnTimer >= spawnInterval)
+        // Check if there are beat timestamps and if the current beat index is within bounds
+        if (beatTimestamps != null && currentBeatIndex < beatTimestamps.Length)
         {
-            SpawnVerticalEnemy();
-            spawnTimer = 0;
+            // Check if it's time to spawn an enemy based on the current beat timestamp
+            if (Time.time >= beatTimestamps[currentBeatIndex])
+            {
+                Debug.Log("SpawnVerticalEnemy called.");
+                SpawnVerticalEnemy();
+                currentBeatIndex++; // Move to the next beat
+            }
         }
     }
 
     public void SpawnVerticalEnemy()
     {
+        Debug.Log("Spawning enemy at spawner index: " + spawnerIndex);
+
         // Instantiate a new enemy at the spawner's position
         GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
@@ -55,6 +55,10 @@ public class VerticalEnemySpawner : MonoBehaviour
 
             // Set descent speed of enemy
             enemyMovement.SetDescentSpeed(descentSpeed);
+        }
+        else
+        {
+            Debug.LogError("EnemyMovement component not found on the spawned enemy.");
         }
     }
 }
