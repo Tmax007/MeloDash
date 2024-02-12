@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 722031430}
   - component: {fileID: 722031429}
   - component: {fileID: 722031428}
+  - component: {fileID: 722031431}
   m_Layer: 0
   m_Name: EnemySpawner5
   m_TagString: Untagged
@@ -552,12 +553,30 @@ Transform:
   m_GameObject: {fileID: 722031427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.857833, y: 3.1284513, z: 0.040739052}
+  m_LocalPosition: {x: 13.857833, y: 3, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722031431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722031427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanes:
+  - {fileID: 1413250449}
+  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  laneSpawnRates:
+  - 4
+  descentSpeed: 2
 --- !u!1 &741098180
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +925,7 @@ Transform:
   m_GameObject: {fileID: 1094845180}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.857833, y: 3.1284513, z: 0.040739052}
+  m_LocalPosition: {x: 7.857833, y: 3, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -925,17 +944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanes:
-  - {fileID: 579460431}
-  - {fileID: 741098181}
   - {fileID: 1119333980}
-  - {fileID: 1125497879}
-  - {fileID: 1413250449}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
   laneSpawnRates:
-  - 2
-  - 3
-  - 4
-  - 5
   - 2
   descentSpeed: 2
 --- !u!1 &1119333979
@@ -1413,6 +1424,7 @@ GameObject:
   - component: {fileID: 1316496982}
   - component: {fileID: 1316496981}
   - component: {fileID: 1316496980}
+  - component: {fileID: 1316496983}
   m_Layer: 0
   m_Name: EnemySpawner2
   m_TagString: Untagged
@@ -1497,12 +1509,30 @@ Transform:
   m_GameObject: {fileID: 1316496979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.857833, y: 3.1284513, z: 0.040739052}
+  m_LocalPosition: {x: 4.857833, y: 3, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1316496983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316496979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanes:
+  - {fileID: 741098181}
+  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  laneSpawnRates:
+  - 4
+  descentSpeed: 3
 --- !u!1 &1377078390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,6 +2170,7 @@ GameObject:
   - component: {fileID: 1651797079}
   - component: {fileID: 1651797078}
   - component: {fileID: 1651797080}
+  - component: {fileID: 1651797081}
   m_Layer: 0
   m_Name: EnemySpawner1
   m_TagString: Untagged
@@ -2208,7 +2239,7 @@ Transform:
   m_GameObject: {fileID: 1651797076}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8578329, y: 3.1284513, z: 0.040739052}
+  m_LocalPosition: {x: 1.8578329, y: 3, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2230,6 +2261,24 @@ MonoBehaviour:
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
   descentSpeed: 2
   spawnerIndex: 0
+--- !u!114 &1651797081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651797076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanes:
+  - {fileID: 579460431}
+  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  laneSpawnRates:
+  - 3
+  descentSpeed: 3
 --- !u!1 &1655436980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2424,7 @@ GameObject:
   - component: {fileID: 1714456948}
   - component: {fileID: 1714456947}
   - component: {fileID: 1714456946}
+  - component: {fileID: 1714456949}
   m_Layer: 0
   m_Name: EnemySpawner4
   m_TagString: Untagged
@@ -2459,12 +2509,30 @@ Transform:
   m_GameObject: {fileID: 1714456945}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.857833, y: 3.1284513, z: 0.040739052}
+  m_LocalPosition: {x: 10.857833, y: 3, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 69263358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714456949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714456945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanes:
+  - {fileID: 1125497879}
+  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  laneSpawnRates:
+  - 3
+  descentSpeed: 2
 --- !u!1 &1752567727
 GameObject:
   m_ObjectHideFlags: 0
