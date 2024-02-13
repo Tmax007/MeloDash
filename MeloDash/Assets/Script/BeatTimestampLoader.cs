@@ -23,14 +23,8 @@ public class BeatTimestampLoader : MonoBehaviour
 
     void Start()
     {
-        if (beatTimestampsCSV != null)
-        {
-            LoadBeatTimestamps();
-        }
-        else
-        {
-            Debug.LogError("No CSV file assigned!");
-        }
+        if (beatTimestampsCSV == null) { Debug.LogError("No CSV file assigned!"); return; }
+        LoadBeatTimestamps();
     }
 
     void LoadBeatTimestamps()

@@ -6,8 +6,8 @@ public class VerticalEnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public float descentSpeed = 2.0f;
 
-    private float[] beatTimestamps; // Array to store beat timestamps
-    private int currentBeatIndex = 0; // Index of the current beat
+    public float[] beatTimestamps; // Array to store beat timestamps
+    public int currentBeatIndex = 0; // Index of the current beat
 
     // Index of the spawner
     public int spawnerIndex;
@@ -15,26 +15,25 @@ public class VerticalEnemySpawner : MonoBehaviour
     void Start()
     {
         // I'll initialize it with an empty array
-        beatTimestamps = new float[0];
-
-        Debug.Log("VerticalEnemySpawner Start method called.");
+        
+        //Debug.Log(currentBeatIndex);
+        //Debug.Log("VerticalEnemySpawner Start method called.");
     }
 
     void Update()
     {
-        Debug.Log("VerticalEnemySpawner Update method called.");
+        //Debug.Log("VerticalEnemySpawner Update method called.");
 
         // Check if there are beat timestamps and if the current beat index is within bounds
-        if (beatTimestamps != null && currentBeatIndex < beatTimestamps.Length)
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        // Check if it's time to spawn an enemy based on the current beat timestamp
+        if (Time.time >= beatTimestamps[currentBeatIndex])
         {
-            // Check if it's time to spawn an enemy based on the current beat timestamp
-            if (Time.time >= beatTimestamps[currentBeatIndex])
-            {
-                Debug.Log("SpawnVerticalEnemy called.");
-                SpawnVerticalEnemy();
-                currentBeatIndex++; // Move to the next beat
-            }
+            Debug.Log("SpawnVerticalEnemy called.");
+            //SpawnVerticalEnemy();
+           // currentBeatIndex++; // Move to the next beat
         }
+
     }
 
     public void SpawnVerticalEnemy()

@@ -491,6 +491,8 @@ MonoBehaviour:
   snapPoint: {fileID: 1413250449}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
   descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
   spawnerIndex: 4
 --- !u!212 &722031429
 SpriteRenderer:
@@ -553,7 +555,7 @@ Transform:
   m_GameObject: {fileID: 722031427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.857833, y: 3, z: 0.040739052}
+  m_LocalPosition: {x: 13.857833, y: -4.4, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,7 +568,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722031427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
@@ -862,7 +864,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1119333980}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  descentSpeed: 6
+  descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
   spawnerIndex: 2
 --- !u!212 &1094845182
 SpriteRenderer:
@@ -925,7 +929,7 @@ Transform:
   m_GameObject: {fileID: 1094845180}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.857833, y: 3, z: 0.040739052}
+  m_LocalPosition: {x: 7.857833, y: -4.4, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -938,7 +942,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094845180}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
@@ -1446,7 +1450,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 741098181}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  descentSpeed: 5
+  descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
   spawnerIndex: 1
 --- !u!212 &1316496981
 SpriteRenderer:
@@ -1509,7 +1515,7 @@ Transform:
   m_GameObject: {fileID: 1316496979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.857833, y: 3, z: 0.040739052}
+  m_LocalPosition: {x: 4.857833, y: -4.4, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1522,7 +1528,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316496979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
@@ -2239,7 +2245,7 @@ Transform:
   m_GameObject: {fileID: 1651797076}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8578329, y: 3, z: 0.040739052}
+  m_LocalPosition: {x: 1.8578329, y: -4.4, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2259,7 +2265,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 579460431}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  descentSpeed: 2
+  descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
   spawnerIndex: 0
 --- !u!114 &1651797081
 MonoBehaviour:
@@ -2268,7 +2276,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651797076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
@@ -2447,6 +2455,8 @@ MonoBehaviour:
   snapPoint: {fileID: 1125497879}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
   descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
   spawnerIndex: 3
 --- !u!212 &1714456947
 SpriteRenderer:
@@ -2509,7 +2519,7 @@ Transform:
   m_GameObject: {fileID: 1714456945}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.857833, y: 3, z: 0.040739052}
+  m_LocalPosition: {x: 10.857833, y: -4.4, z: 0.040739052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2522,7 +2532,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714456945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
@@ -2563,7 +2573,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatTimestampsCSV: {fileID: 4900000, guid: 612aed39f08fcb84e90a373068c646bb, type: 3}
-  beatDataList: []
+  beatDataList:
+  - timestamp: 0
+    spawnerIndex: 0
   enemySpawners:
   - {fileID: 1651797080}
   - {fileID: 1316496980}
@@ -2982,6 +2994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatDataList: []
+  loader: {fileID: 1752567728}
+  currentBeatIndex: 0
+  spawnerIndex: 0
   enemySpawners:
   - {fileID: 1651797080}
   - {fileID: 1316496980}
