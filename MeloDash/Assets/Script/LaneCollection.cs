@@ -44,12 +44,31 @@ public class LaneCollection : MonoBehaviour
         {
             sinTime = 0f;
             currentLane--;
+
+            //Log telemetry data.
+            var data = new LaneChangeData()
+            {
+                playerPos = gameObject.transform.position,
+                laneIndex = currentLane,
+                gameTime = Time.time
+            };
+
+            TelemetryLogger.Log(this, "changeLane", data);
         }
 
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && currentLane < lanes.Length - 1 && moving == false)
         {
             sinTime = 0f;
             currentLane++;
+
+            var data = new LaneChangeData()
+            {
+                playerPos = gameObject.transform.position,
+                laneIndex = currentLane,
+                gameTime = Time.time
+            };
+
+            TelemetryLogger.Log(this, "changeLane", data);
         }
 
         //Debug.Log((transform.position == lanes[currentLane].transform.position));
@@ -58,5 +77,15 @@ public class LaneCollection : MonoBehaviour
     public float evaluate(float x)
     {
         return (float)(0.5f * Mathf.Sin(x - Mathf.PI / 2f) + 0.5);
+    }
+
+    //Telemetry struct
+    [System.Serializable]
+    public struct LaneChangeData 
+    {
+        public Vector3 playerPos;
+        public int laneIndex;
+        public float gameTime;
+
     }
 }
