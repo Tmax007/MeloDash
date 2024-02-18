@@ -35,28 +35,28 @@ public class BeatManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("BeatManager Update method called.");
+        //Debug.Log("BeatManager Update method called.");
         // Calculate the current song time
         float currentTime = Time.time - songStartTime;
 
         // Debug log for current and next beat timestamps
         //Debug.Log("Current time: " + currentTime + ", Next beat timestamp: " + beatDataList[currentBeatIndex].timestamp);
 
-        Debug.Log("Current beat index: " + currentBeatIndex + ", Beat data count: " + beatDataList.Count);
+        //Debug.Log("Current beat index: " + currentBeatIndex + ", Beat data count: " + beatDataList.Count);
 
         // Debug log for spawning enemy
-        Debug.Log("Spawning enemy for beat index: " + currentBeatIndex);
+        //Debug.Log("Spawning enemy for beat index: " + currentBeatIndex);
 
 
         // Check if the current time matches the next beat timestamp
         if (currentBeatIndex < beatDataList.Count && currentTime >= beatDataList[currentBeatIndex].timestamp)
         {
-            Debug.Log("Current time: " + currentTime + ", Next beat timestamp: " + beatDataList[currentBeatIndex].timestamp);
+            //Debug.Log("Current time: " + currentTime + ", Next beat timestamp: " + beatDataList[currentBeatIndex].timestamp);
 
             // Ensure that the current beat index is valid
             if (currentBeatIndex >= 0 && currentBeatIndex < beatDataList.Count)
             {
-                Debug.Log("Spawning enemy for beat index: " + currentBeatIndex);
+                //Debug.Log("Spawning enemy for beat index: " + currentBeatIndex);
 
                 // Trigger an action at this beat (e.g., spawn an enemy)
                 SpawnEnemy(currentBeatIndex);
@@ -66,7 +66,7 @@ public class BeatManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Invalid beat index: " + currentBeatIndex);
+                //Debug.LogError("Invalid beat index: " + currentBeatIndex);
             }
         }
     }
@@ -93,12 +93,12 @@ public class BeatManager : MonoBehaviour
     void PlaySong()
     {
         // Add a debug log to indicate that the PlaySong method is being called
-        Debug.Log("PlaySong method called.");
+        //Debug.Log("PlaySong method called.");
 
         // Play the song (e.g., using AudioSource.Play)
         songStartTime = Time.time; // Record the start time of the song
 
         // Add a debug log to print the song start time
-        Debug.Log("Song start time: " + songStartTime);
+        //Debug.Log("Song start time: " + songStartTime);
     }
 }

@@ -29,7 +29,7 @@ public class BeatTimestampLoader : MonoBehaviour
 
     void LoadBeatTimestamps()
     {
-        Debug.Log("Loading beat timestamps...");
+        //Debug.Log("Loading beat timestamps...");
         // Split the CSV text into lines
         string[] lines = beatTimestampsCSV.text.Split('\n');
 
@@ -51,14 +51,14 @@ public class BeatTimestampLoader : MonoBehaviour
                     beatDataList.Add(beatData);
 
                     // Debug log the loaded beat data
-                    Debug.Log("Loaded beat data: Timestamp=" + timestamp + ", SpawnerIndex=" + spawnerIndex);
+                    //Debug.Log("Loaded beat data: Timestamp=" + timestamp + ", SpawnerIndex=" + spawnerIndex);
                 }
                 else
                 {
-                    Debug.LogError("Invalid timestamp format: " + values[1]);
+                    //Debug.LogError("Invalid timestamp format: " + values[1]);
                 }
             }
         }
-        Debug.Log("Beat timestamps loaded.");
+        //Debug.Log("Beat timestamps loaded.");
     }
 }

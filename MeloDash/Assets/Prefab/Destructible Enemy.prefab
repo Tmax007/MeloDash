@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthNum: 3
-  damageSourceLayer: Projectile
+  damageSourceLayer:
+    serializedVersion: 2
+    m_Bits: 0
   regenHealth: 0
   regenTime: 0

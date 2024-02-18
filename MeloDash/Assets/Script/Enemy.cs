@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
                 reachedSnapPoint = true;
 
                 // Update the score when the enemy reaches the snap point
-                scoreManager.UpdateScore();
+                scoreManager.UpdateScore(1);
             }
         }
         else

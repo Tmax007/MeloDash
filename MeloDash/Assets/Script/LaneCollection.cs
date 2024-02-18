@@ -5,7 +5,8 @@ using UnityEngine;
 public class LaneCollection : MonoBehaviour
 {
 
-    int currentLane = 0;
+    [HideInInspector]
+    public int currentLane = 2;
 
     public float movSpeed;
     float sinTime;
@@ -13,7 +14,6 @@ public class LaneCollection : MonoBehaviour
     bool moving;
 
     public Transform[] lanes;
-
 
     // Start is called before the first frame update
     void Start()
@@ -40,19 +40,21 @@ public class LaneCollection : MonoBehaviour
             moving = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) && currentLane > 0 && moving == false)
+        if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLane > 0 && moving == false)
         {
             sinTime = 0f;
             currentLane--;
         }
 
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && currentLane < lanes.Length - 1 && moving == false)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && currentLane < lanes.Length - 1 && moving == false)
         {
             sinTime = 0f;
             currentLane++;
         }
 
         //Debug.Log((transform.position == lanes[currentLane].transform.position));
+
+        //Debug.Log(currentLane);
     }
 
     public float evaluate(float x)
