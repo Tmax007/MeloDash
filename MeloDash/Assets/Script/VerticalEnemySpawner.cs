@@ -25,7 +25,6 @@ public class VerticalEnemySpawner : MonoBehaviour
         //Debug.Log("VerticalEnemySpawner Update method called.");
 
         // Check if there are beat timestamps and if the current beat index is within bounds
-        //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         // Check if it's time to spawn an enemy based on the current beat timestamp
         if (Time.time >= beatTimestamps[currentBeatIndex])
         {

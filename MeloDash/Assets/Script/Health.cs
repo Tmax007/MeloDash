@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     public LayerMask damageSourceLayer;
 
-    //regenHealth is a public boolean that can be toggled in the inspector to enable/disable regenerating health.
+    //regenHealth is a public boolean that can be toggled in the inspector to enable/disable regenerating health (should be enabled for stuff we want to regenerate health like the player, & disabled for what we don't want like destructible enemies).
     public bool regenHealth;
     //regenerating is used for script logic to determine when entity is currently regenerating health.
     bool regenerating;

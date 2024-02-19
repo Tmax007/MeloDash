@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
         }
     }*/
 
-    // Update the score when an enemy reaches the snap point without colliding with the player
+    //Update the score by increasing it by the amount specified in the scoreAdd integer, before applying it to the UI.
     public void UpdateScore(int scoreAdd)
     {
         // Increment the score
