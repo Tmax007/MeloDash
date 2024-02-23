@@ -39,7 +39,7 @@ public class LastSecondZone : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && bothInMask && player.currentLane > 0)
         {
             //Current score bonus commented out due to not working right with the score system. Replaced with the game outputting the lane's laneIndex.
-            //scoreManager.UpdateScore(10);
+            scoreManager.UpdateScore(10);
             Debug.Log(laneIndex);
         }
 
@@ -47,7 +47,7 @@ public class LastSecondZone : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && bothInMask && player.currentLane < 4)
         {
             //Current score bonus commented out due to not working right with the score system. Replaced with the game outputting the lane's laneIndex.
-            //scoreManager.UpdateScore(10);
+            scoreManager.UpdateScore(10);
             Debug.Log(laneIndex);
         }
     }

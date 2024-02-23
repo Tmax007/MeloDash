@@ -428,7 +428,7 @@ MonoBehaviour:
   zoneY: 2.55
   displacementY: 0.68
   laneIndex: 0
-  scoreManager: {fileID: 2135615621}
+  scoreManager: {fileID: 611046101}
   player: {fileID: 1511993934}
 --- !u!1 &611046100
 GameObject:
@@ -699,7 +699,7 @@ MonoBehaviour:
   zoneY: 2.55
   displacementY: 0.68
   laneIndex: 1
-  scoreManager: {fileID: 2135615621}
+  scoreManager: {fileID: 611046101}
   player: {fileID: 1511993934}
 --- !u!1 &965619580
 GameObject:
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   zoneY: 2.55
   displacementY: 0.68
   laneIndex: 2
-  scoreManager: {fileID: 2135615621}
+  scoreManager: {fileID: 611046101}
   player: {fileID: 1511993934}
 --- !u!1 &1125497878
 GameObject:
@@ -1195,7 +1195,7 @@ MonoBehaviour:
   zoneY: 2.55
   displacementY: 0.68
   laneIndex: 3
-  scoreManager: {fileID: 2135615621}
+  scoreManager: {fileID: 611046101}
   player: {fileID: 1511993934}
 --- !u!1 &1157564735
 GameObject:
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   zoneY: 2.55
   displacementY: 0.68
   laneIndex: 4
-  scoreManager: {fileID: 2135615621}
+  scoreManager: {fileID: 611046101}
   player: {fileID: 1511993934}
 --- !u!1 &1421485259
 GameObject:
