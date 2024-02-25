@@ -43,14 +43,14 @@ public class LaneCollection : MonoBehaviour
         }
 
         //If the player presses 'A' or the left arrow while not being at the left-most lane, they move left.
-        if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLane > 0 && moving == false)
+        if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLane > 0)
         {
             sinTime = 0f;
             currentLane--;
         }
 
         //If the player presses 'D' or the right arrow while not being at the right-most lane, they move right.
-        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && currentLane < lanes.Length - 1 && moving == false)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && currentLane < lanes.Length - 1)
         {
             sinTime = 0f;
             currentLane++;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LastSecondZone : MonoBehaviour
@@ -10,86 +11,53 @@ public class LastSecondZone : MonoBehaviour
     public float zoneY;
     public float displacementY;
 
-    LayerMask playerMask;
     LayerMask enemyMask;
+    LaneCollection controls;
 
     //Checks if an object with the "Player", "Enemy", or both layers are in the raycast.
-    bool playerInMask = false;
-    bool enemyInMask = false;
-    bool bothInMask = false;
-
-    //TEMPORARY DEBUG VARIABLE: Exists to communicate feedback for if the player has dodged at the last second, & which lane they did so from while the score system is still wonky.
-    [SerializeField]
-    int laneIndex;
+    bool enemyInCast = false;
 
     public ScoreManager scoreManager;
-    public LaneCollection player;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerMask = LayerMask.NameToLayer("Player");
-        enemyMask = LayerMask.NameToLayer("Enemy");
+        enemyMask = LayerMask.GetMask("Enemy");
+        controls = gameObject.GetComponent<LaneCollection>();
+        //Debug.Log(enemyMask);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //If the player presses 'A' or the left arrow while both an enemy & player are in the same zone & they aren't in the left most lane, they recieve a score bonus.
-        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && bothInMask && player.currentLane > 0)
+        //If the player moves left or right while enemyInCast is true, they gain a score bonus of 10.
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && controls.currentLane > 0 && enemyInCast == true)
         {
-            //Current score bonus commented out due to not working right with the score system. Replaced with the game outputting the lane's laneIndex.
             scoreManager.UpdateScore(10);
-            Debug.Log(laneIndex);
         }
 
-        //If the player presses 'D' or the right arrow while both an enemy & player are in the same zone & they aren't in the right most lane (will probably need to be changed manually for stuff like a tutorial), they recieve a score bonus.
-        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && bothInMask && player.currentLane < 4)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && controls.currentLane < controls.lanes.Length - 1 && enemyInCast == true)
         {
-            //Current score bonus commented out due to not working right with the score system. Replaced with the game outputting the lane's laneIndex.
             scoreManager.UpdateScore(10);
-            Debug.Log(laneIndex);
         }
     }
 
     private void FixedUpdate()
     {
-        //Creates raycast.
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y + displacementY), new Vector2(zoneX, zoneY), 0);
+        //Generates a raycast around the player that looks for objects with the "Enemy" layer. 
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(new Vector3(transform.position.x, transform.position.y + displacementY), new Vector3(zoneX, zoneY), 0, enemyMask);
 
-        //Checks if 2 or more objects are in the raycast at all times.
-        if (colliders.Length >= 2)
+        //If it detects something, enemyInCast is set to true. If it doesn't it's set to false.
+        if (colliders.Length > 0)
         {
-            //Goes through everything in the raycast to see if either has the "Player" or "Enemy" layer, enabling their respective booleans if they do. 
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i].gameObject.layer == playerMask)
-                {
-                    playerInMask = true;
-                }
-
-                if (colliders[i].gameObject.layer == enemyMask)
-                {
-                    enemyInMask = true;
-                }
-            }
-
-            //If both booleans are true in this instance, enable the boolean stating so.
-            if(playerInMask && enemyInMask)
-            {
-                bothInMask = true;
-            }
-
+            enemyInCast = true;
         }
-
-        //Sets all booleans to false if there are less than 2 objects found in the raycast (a bit messy but it works, might ask Keely or Jeff for help optimizing).
         else
         {
-            playerInMask = false;
-            enemyInMask = false;
-            bothInMask = false;
+            enemyInCast = false;
         }
 
+        //Debug.Log(colliders.Length);
     }
 
     //Visualizes the position & proportion of the raycast in the editor for debugging. These are invisible during actual play.
