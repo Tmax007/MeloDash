@@ -17,9 +17,12 @@ public class Health : MonoBehaviour
 
     //regenTime determines the length of time needed for an entity to regenerate 1 health.
     public float regenTime;
-    float currentTime = 0;
+    [HideInInspector]  
+    public float currentTime = 0;
 
     LaneCollection playerControls;
+
+    public HealthUIUpdate healthUI;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class Health : MonoBehaviour
         if(gameObject.name == "Player")
         {
             playerControls = gameObject.GetComponent<LaneCollection>();
+            healthUI.SendMessage("UpdateUINumber");
         }
 
     }
@@ -49,7 +53,6 @@ public class Health : MonoBehaviour
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
                     lane = playerControls.currentLane
                 };
-
 
                 TelemetryLogger.Log(this, "PlayerDeath", data);
             }
@@ -71,17 +74,20 @@ public class Health : MonoBehaviour
         {
             Destroy(collision.gameObject);
             healthNum--;
+            currentTime = 0;
             regenerating = true;
+
+            //SendMessage("UpdateUINumber", healthUI);
 
             if(gameObject.name == "Player" && healthNum > 0)
             {
+                healthUI.SendMessage("UpdateUINumber");
 
                 var data = new DamageDeathEventData()
                 {
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
                     lane = playerControls.currentLane
                 };
-
 
                 TelemetryLogger.Log(this, "PlayerDamage", data);
             }    
@@ -99,6 +105,11 @@ public class Health : MonoBehaviour
             currentTime = 0;
             healthNum++;
 
+            if(gameObject.name == "Player")
+            {
+                healthUI.SendMessage("UpdateUINumber");
+            }
+            
         }
 
         if(healthNum == maxHealth)
