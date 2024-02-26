@@ -5,6 +5,9 @@ public class Projectile : MonoBehaviour
     private float speed;
     private LayerMask enemyLayer;
 
+    GameObject player;
+    Shooting playershoot;
+
     public void SetSpeed(float speed)
     {
         this.speed = speed;
@@ -13,6 +16,12 @@ public class Projectile : MonoBehaviour
     public void SetEnemyLayer(LayerMask enemyLayer)
     {
         this.enemyLayer = enemyLayer;
+    }
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+        playershoot = player.GetComponent<Shooting>();
     }
 
     void Update()
@@ -28,6 +37,8 @@ public class Projectile : MonoBehaviour
 
             // Destroy the enemy
             Destroy(hit.gameObject);
+
+            playershoot.enemiesDestroyed++;
 
             //Destroy the projectile
             Destroy(gameObject);

@@ -10,6 +10,14 @@ public class Shooting : MonoBehaviour
 
     private float fireTimer = 0f;
 
+    [HideInInspector]
+    public int enemiesDestroyed;
+
+    private void Start()
+    {
+        enemiesDestroyed = 0;
+    }
+
     void Update()
     {
         // Increment fire timer
@@ -47,5 +55,10 @@ public class Shooting : MonoBehaviour
         {
             Debug.LogWarning("Projectile component not found in projectile prefab.");
         }
+    }
+
+    private void OnDestroy()
+    {
+        TelemetryLogger.Log(this, "# of destructible enemies destroyed: " + enemiesDestroyed);
     }
 }

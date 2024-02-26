@@ -14,6 +14,10 @@ public class LastSecondZone : MonoBehaviour
     LayerMask enemyMask;
     LaneCollection controls;
 
+    Health health;
+
+    int dodgeNum;
+
     //Checks if an object with the "Player", "Enemy", or both layers are in the raycast.
     bool enemyInCast = false;
 
@@ -24,6 +28,9 @@ public class LastSecondZone : MonoBehaviour
     {
         enemyMask = LayerMask.GetMask("Enemy");
         controls = gameObject.GetComponent<LaneCollection>();
+
+        health = gameObject.GetComponent<Health>();
+        dodgeNum = 0;
         //Debug.Log(enemyMask);
     }
 
@@ -34,12 +41,15 @@ public class LastSecondZone : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && controls.currentLane > 0 && enemyInCast == true)
         {
             scoreManager.UpdateScore(10);
+            dodgeNum++;
         }
 
         if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && controls.currentLane < controls.lanes.Length - 1 && enemyInCast == true)
         {
             scoreManager.UpdateScore(10);
+            dodgeNum++;
         }
+
     }
 
     private void FixedUpdate()
@@ -65,5 +75,10 @@ public class LastSecondZone : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + displacementY), new Vector3(zoneX, zoneY, 0));
+    }
+
+    private void OnDestroy()
+    {
+        TelemetryLogger.Log(this, "# of last-second dodges performed: " + dodgeNum);
     }
 }

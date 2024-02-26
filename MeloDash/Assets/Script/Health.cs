@@ -19,11 +19,19 @@ public class Health : MonoBehaviour
     public float regenTime;
     float currentTime = 0;
 
+    LaneCollection playerControls;
+
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = healthNum;
         regenerating = false;
+
+        if(gameObject.name == "Player")
+        {
+            playerControls = gameObject.GetComponent<LaneCollection>();
+        }
+
     }
 
     // Update is called once per frame
@@ -32,6 +40,19 @@ public class Health : MonoBehaviour
         if(healthNum == 0)
         {
             Destroy(gameObject);
+
+            if (gameObject.name == "Player")
+            {
+
+                var data = new DamageDeathEventData()
+                {
+                    secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
+                    lane = playerControls.currentLane
+                };
+
+
+                TelemetryLogger.Log(this, "PlayerDeath", data);
+            }
         }
 
         if(regenerating && regenHealth)
@@ -51,6 +72,19 @@ public class Health : MonoBehaviour
             Destroy(collision.gameObject);
             healthNum--;
             regenerating = true;
+
+            if(gameObject.name == "Player" && healthNum > 0)
+            {
+
+                var data = new DamageDeathEventData()
+                {
+                    secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
+                    lane = playerControls.currentLane
+                };
+
+
+                TelemetryLogger.Log(this, "PlayerDamage", data);
+            }    
         }
     }
 
@@ -73,4 +107,13 @@ public class Health : MonoBehaviour
             regenerating = false;
         }
     }
+
+    [System.Serializable]
+    public struct DamageDeathEventData
+    {
+        public int secondsIntoLevel;
+
+        public int lane;
+    }
+
 }
