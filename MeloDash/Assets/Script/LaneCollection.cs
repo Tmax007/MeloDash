@@ -6,7 +6,7 @@ public class LaneCollection : MonoBehaviour
 {
 
     //Set to 2 so player starts at the middle lane instead of the left (made public for logic of other GameObjects).
-    [HideInInspector]
+
     public int currentLane = 2;
 
     public float movSpeed;
