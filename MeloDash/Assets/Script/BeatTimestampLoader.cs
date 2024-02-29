@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.IO;
 
 public class BeatTimestampLoader : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class BeatTimestampLoader : MonoBehaviour
     public struct BeatData
     {
         public float timestamp;
-        public int spawnerIndex;
+        public int[] spawnerIndices; // Change to int[] to store multiple spawn index values
     }
 
     // Public reference to the CSV file containing beat timestamps
@@ -17,9 +16,6 @@ public class BeatTimestampLoader : MonoBehaviour
 
     // List to store beat data (timestamp and associated enemy spawner index)
     public List<BeatData> beatDataList = new List<BeatData>();
-
-    // Reference to the enemy spawners
-    public List<VerticalEnemySpawner> enemySpawners;
 
     void Start()
     {
@@ -41,12 +37,23 @@ public class BeatTimestampLoader : MonoBehaviour
             if (values.Length >= 3)
             {
                 // Parse the timestamp string to a float
-                if (float.TryParse(values[1], out float timestamp) && int.TryParse(values[2], out int spawnerIndex))
+                if (float.TryParse(values[1], out float timestamp))
                 {
-                    // Add the timestamp and spawner index to the list
+                    // Parse the spawner index values to an array of ints
+                    string[] indexValues = values[2].Trim().Split(';');
+                    List<int> indices = new List<int>();
+                    foreach (string indexStr in indexValues)
+                    {
+                        if (int.TryParse(indexStr, out int index))
+                        {
+                            indices.Add(index);
+                        }
+                    }
+
+                    // Add the timestamp and spawner indices to the list
                     BeatData beatData = new BeatData();
                     beatData.timestamp = timestamp;
-                    beatData.spawnerIndex = spawnerIndex;
+                    beatData.spawnerIndices = indices.ToArray();
                     beatDataList.Add(beatData);
                 }
             }

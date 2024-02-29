@@ -569,7 +569,7 @@ MonoBehaviour:
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnerIndex: 4
+  spawnerIndex: 0
 --- !u!212 &722031429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnerIndex: 2
+  spawnerIndex: 0
 --- !u!212 &1094845182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1471,7 +1471,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1150074733}
         m_TargetAssemblyTypeName: SessionDisplay, Assembly-CSharp
         m_MethodName: OnConnectionFail
-        m_Mode: 5
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1658,7 +1658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d656c421c828164faa6dc4a2e79f1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: 
 --- !u!1 &1212429543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,7 +1829,7 @@ MonoBehaviour:
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnerIndex: 1
+  spawnerIndex: 0
 --- !u!212 &1316496981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2856,7 +2855,7 @@ MonoBehaviour:
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnerIndex: 3
+  spawnerIndex: 0
 --- !u!212 &1714456947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2974,13 +2973,7 @@ MonoBehaviour:
   beatTimestampsCSV: {fileID: 4900000, guid: 612aed39f08fcb84e90a373068c646bb, type: 3}
   beatDataList:
   - timestamp: 0
-    spawnerIndex: 0
-  enemySpawners:
-  - {fileID: 1651797080}
-  - {fileID: 1316496980}
-  - {fileID: 1094845181}
-  - {fileID: 1714456946}
-  - {fileID: 722031428}
+    spawnerIndices: 
 --- !u!4 &1752567729
 Transform:
   m_ObjectHideFlags: 0
@@ -3395,7 +3388,7 @@ MonoBehaviour:
   beatDataList: []
   loader: {fileID: 1752567728}
   currentBeatIndex: 0
-  spawnerIndex: 0
+  spawnerIndices: 
   enemySpawners:
   - {fileID: 1651797080}
   - {fileID: 1316496980}

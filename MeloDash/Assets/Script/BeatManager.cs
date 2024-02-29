@@ -9,7 +9,7 @@ public class BeatManager : MonoBehaviour
 
     private float songStartTime;
     public int currentBeatIndex;
-    public int spawnerIndex;
+    public int[] spawnerIndices; // Change to int[] to store multiple spawn index values
     // Reference to the enemy spawners
     public List<VerticalEnemySpawner> enemySpawners;
 
@@ -45,7 +45,7 @@ public class BeatManager : MonoBehaviour
             if (currentBeatIndex >= 0 && currentBeatIndex < beatDataList.Count)
             {
                 // Trigger an action at this beat (e.g., spawn an enemy)
-                SpawnEnemy(currentBeatIndex);
+                SpawnEnemies(currentBeatIndex);
 
                 // Move to the next beat
                 currentBeatIndex++;
@@ -53,18 +53,28 @@ public class BeatManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemy(int beatIndex)
+    void SpawnEnemies(int beatIndex)
     {
-        // Get the associated enemy spawner index for this beat
-        spawnerIndex = beatDataList[currentBeatIndex].spawnerIndex;
+        // Get the associated enemy spawner indices for this beat
+        spawnerIndices = beatDataList[currentBeatIndex].spawnerIndices;
 
-        // Spawn an enemy using the corresponding enemy spawner
-        enemySpawners[spawnerIndex].SpawnVerticalEnemy();
+        // Spawn enemies using the corresponding enemy spawners
+        foreach (int index in spawnerIndices)
+        {
+            if (index >= 0 && index < enemySpawners.Count)
+            {
+                enemySpawners[index].SpawnVerticalEnemy();
+            }
+            else
+            {
+                Debug.LogError("Invalid enemy spawner index: " + index);
+            }
+        }
     }
 
     void PlaySong()
     {
-        // Play the song (e.g., using AudioSource.Play)
+        // Play the song
         songStartTime = Time.time; // Record the start time of the song
     }
 }
