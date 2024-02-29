@@ -12,33 +12,8 @@ public class VerticalEnemySpawner : MonoBehaviour
     // Index of the spawner
     public int spawnerIndex;
 
-    void Start()
-    {
-        // I'll initialize it with an empty array
-        
-        //Debug.Log(currentBeatIndex);
-        //Debug.Log("VerticalEnemySpawner Start method called.");
-    }
-
-    void Update()
-    {
-        //Debug.Log("VerticalEnemySpawner Update method called.");
-
-        // Check if there are beat timestamps and if the current beat index is within bounds
-        // Check if it's time to spawn an enemy based on the current beat timestamp
-        if (Time.time >= beatTimestamps[currentBeatIndex])
-        {
-            //Debug.Log("SpawnVerticalEnemy called.");
-            //SpawnVerticalEnemy();
-           // currentBeatIndex++; // Move to the next beat
-        }
-
-    }
-
     public void SpawnVerticalEnemy()
     {
-        //Debug.Log("Spawning enemy at spawner index: " + spawnerIndex);
-
         // Instantiate a new enemy at the spawner's position
         GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
@@ -53,10 +28,6 @@ public class VerticalEnemySpawner : MonoBehaviour
 
             // Set descent speed of enemy
             enemyMovement.SetDescentSpeed(descentSpeed);
-        }
-        else
-        {
-            //Debug.LogError("EnemyMovement component not found on the spawned enemy.");
         }
     }
 }

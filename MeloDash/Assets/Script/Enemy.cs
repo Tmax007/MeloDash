@@ -13,10 +13,6 @@ public class Enemy : MonoBehaviour
     {
         // Find the ScoreManager GameObject and get its ScoreManager component
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
-        if (scoreManager == null)
-        {
-            Debug.LogError("ScoreManager not found in the scene.");
-        }
     }
 
     // Set destination point for enemy to move towards
