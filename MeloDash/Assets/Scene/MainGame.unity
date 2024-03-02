@@ -566,9 +566,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1413250449}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
+  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &722031429
 SpriteRenderer:
@@ -940,9 +942,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1119333980}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
+  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &1094845182
 SpriteRenderer:
@@ -1826,9 +1830,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 741098181}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
+  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &1316496981
 SpriteRenderer:
@@ -2663,9 +2669,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 579460431}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
+  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!114 &1651797081
 MonoBehaviour:
@@ -2852,9 +2860,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1125497879}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
+  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &1714456947
 SpriteRenderer:

@@ -4,19 +4,32 @@ public class VerticalEnemySpawner : MonoBehaviour
 {
     public Transform snapPoint;
     public GameObject enemyPrefab;
+    public GameObject destructibleEnemyPrefab;
     public float descentSpeed = 2.0f;
 
     public float[] beatTimestamps; // Array to store beat timestamps
     public int currentBeatIndex = 0; // Index of the current beat
+
+    public bool spawnDestructible;
 
     // Index of the spawner
     public int spawnerIndex;
 
     public void SpawnVerticalEnemy()
     {
-        // Instantiate a new enemy at the spawner's position
-        GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        GameObject newEnemy;
 
+        if (spawnDestructible)
+        {
+            // Instantiate a new destructible enemy at the spawner's position
+            newEnemy = Instantiate(destructibleEnemyPrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            // Instantiate a new enemy at the spawner's position
+            newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        }
+        
         // Get the EnemyMovement component of the spawned enemy
         Enemy enemyMovement = newEnemy.GetComponent<Enemy>();
 

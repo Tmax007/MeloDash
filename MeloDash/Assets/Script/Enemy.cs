@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Checks if enemy is visible from camera
-    bool IsVisibleFrom(Camera camera)
+    public bool IsVisibleFrom(Camera camera)
     {
         // Calculate frustum planes of the camera
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
