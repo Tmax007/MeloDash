@@ -10,6 +10,7 @@ public class VerticalEnemySpawner : MonoBehaviour
     public float[] beatTimestamps; // Array to store beat timestamps
     public int currentBeatIndex = 0; // Index of the current beat
 
+    //Bool determines whether or spawner instantiates destructible or regular enemies.
     public bool spawnDestructible;
 
     // Index of the spawner

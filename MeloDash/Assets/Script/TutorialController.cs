@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
-
+    //Reference for the tutorial's enemy spawner.
     public VerticalEnemySpawner verticalEnemySpawner;
 
+    //Reference for the player's last-second dodge script
     public LastSecondZone playerLastSecondDodge;
 
-    //public int tutorialState = 0;
-
+    //Enum storing the various stages of the tutorial.
     public enum tutorialState {dodgeTest, lastSecondDodgeTest, shootingTest}
 
     public tutorialState state;
@@ -18,27 +18,31 @@ public class TutorialController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Spawns an enemy in the middle lane every 3 (as of now) seconds.
         verticalEnemySpawner.InvokeRepeating("SpawnVerticalEnemy", 3, 3);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //Set the spawner to spawn destructible enemies if in the shootingTest state.
         if(state == tutorialState.shootingTest)
         {
             verticalEnemySpawner.spawnDestructible = true;
         }
+        //Set the spawner to spawn regular enemies if not in the shootingTest state.
         else
         {
             verticalEnemySpawner.spawnDestructible = false;
         }
 
+        //Enable the player's last-second dodging if in the lastSecondDodgeTest state.
         if(state == tutorialState.lastSecondDodgeTest)
         {
             playerLastSecondDodge.enabled = true;
             Debug.Log("A");
         }
+        //Disable the player's last-second dodging if not in the lastSecondDodgeTest state.
         else
         {
             playerLastSecondDodge.enabled = false;
