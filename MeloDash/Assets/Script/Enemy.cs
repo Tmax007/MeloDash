@@ -42,17 +42,7 @@ public class Enemy : MonoBehaviour
 
                 // Update the score when the enemy reaches the snap point
                 scoreManager.UpdateScore(1);
-            }
-        }
-        else
-        {
-            // Move downward until off-screen
-            transform.Translate(Vector3.down * descentSpeed * Time.deltaTime);
 
-            // Check if enemy is off-screen
-            if (!IsVisibleFrom(Camera.main))
-            {
-                // Destroy enemy if it's off-screen
                 Destroy(gameObject);
             }
         }
