@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2801168004943463564}
   - component: {fileID: 8107573960176772742}
-  - component: {fileID: 990012814997251956}
   - component: {fileID: 1260209732180236163}
   - component: {fileID: -3501428423967331015}
   - component: {fileID: -1361195620244560037}
+  - component: {fileID: -5604240897549750124}
   m_Layer: 8
   m_Name: Destructible Enemy
   m_TagString: Untagged
@@ -89,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &990012814997251956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4601460923525205300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62da67681ed4aa9489283c322251fc29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreManager: {fileID: 0}
 --- !u!58 &1260209732180236163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,6 +171,19 @@ MonoBehaviour:
   regenTime: 0
   currentTime: 0
   healthUI: {fileID: 0}
+--- !u!114 &-5604240897549750124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4601460923525205300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62da67681ed4aa9489283c322251fc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
 --- !u!1 &6919000396354925028
 GameObject:
   m_ObjectHideFlags: 0
