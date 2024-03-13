@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa188ed3cd5ee314b91a17c5c707da0a, type: 3}
   m_Name: TelemetrySettings
   m_EditorClassIdentifier: 
-  userName: dinkin
-  secret: 991682971
+  userName: Frosty Flippers
+  secret: commerce trunk
   _version: PT-1
   _serverURL: https://dd-delemetry-1-2a4510835c2b.herokuapp.com/
-  serverCommunication: 1
+  serverCommunication: 2
   debugLogging: 0
   <SetupId>k__BackingField: MSI > MeloDash / MeloDash @ theoy-1763808531
