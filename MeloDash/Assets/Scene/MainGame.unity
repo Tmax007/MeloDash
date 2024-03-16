@@ -2471,6 +2471,7 @@ MonoBehaviour:
   regenTime: 5
   currentTime: 0
   healthUI: {fileID: 1157564739}
+  scoreManager: {fileID: 611046101}
 --- !u!58 &1511993938
 CircleCollider2D:
   m_ObjectHideFlags: 0

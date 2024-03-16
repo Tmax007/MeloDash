@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
 
     public HealthUIUpdate healthUI;
 
+    public ScoreManager scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,10 @@ public class Health : MonoBehaviour
         {
             playerControls = gameObject.GetComponent<LaneCollection>();
             healthUI.SendMessage("UpdateUINumber");
+
+            //Sets the player to die after 125 seconds so that data can still be logged in winning attempts during testing.
+            //Being set to occur after 125 seconds means that it can only happen after the player's gotten through everything.
+            Invoke("selfDestruct", 125);
         }
 
     }
@@ -51,7 +57,8 @@ public class Health : MonoBehaviour
                 var data = new DamageDeathEventData()
                 {
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
-                    lane = playerControls.currentLane
+                    lane = playerControls.currentLane,
+                    finalScore = scoreManager.score
                 };
 
                 TelemetryLogger.Log(this, "PlayerDeath", data);
@@ -125,6 +132,14 @@ public class Health : MonoBehaviour
         public int secondsIntoLevel;
 
         public int lane;
+
+        public int finalScore;
+    }
+
+    //This exists solely for telemetry reasons, so that we can get data from players who make it to the end.
+    void selfDestruct()
+    {
+        healthNum = 0;
     }
 
 }

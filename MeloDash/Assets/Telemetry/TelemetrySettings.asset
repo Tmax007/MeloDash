@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: Frosty Flippers
   secret: commerce trunk
-  _version: PT-1
+  _version: PT-2
   _serverURL: https://dd-delemetry-1-2a4510835c2b.herokuapp.com/
-  serverCommunication: 2
+  serverCommunication: 0
   debugLogging: 0
   <SetupId>k__BackingField: MSI > MeloDash / MeloDash @ theoy-1763808531
