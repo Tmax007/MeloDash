@@ -21,7 +21,7 @@ public class LaneCollection : MonoBehaviour
     {
         // Add boundary check before accessing the lanes array
         if (currentLane >= 0 && currentLane < lanes.Length && transform.position != lanes[currentLane].transform.position)
-        {        
+        {
             sinTime += Time.deltaTime * movSpeed;
             sinTime = Mathf.Clamp(sinTime, 0, Mathf.PI);
             float t = evaluate(sinTime);
@@ -37,7 +37,7 @@ public class LaneCollection : MonoBehaviour
         }
 
         //If the player presses 'A' or the left arrow while not being at the left-most lane, they move left.
-        if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLane > 0)
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLane > 0)
         {
             sinTime = 0f;
             currentLane--;
