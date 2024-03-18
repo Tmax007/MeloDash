@@ -3146,7 +3146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac8a11fd5df9f84ab594ba16c73f4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthNum: 3
+  healthNum: 5
   damageSourceLayer:
     serializedVersion: 2
     m_Bits: 320
