@@ -156,11 +156,11 @@ RectTransform:
   - {fileID: 1150074728}
   m_Father: {fileID: 1212429547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 17.5, y: -470}
-  m_SizeDelta: {x: 903.47, y: 43.3441}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 17.5, y: 38.655884}
+  m_SizeDelta: {x: 903.47, y: 43.344116}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &54580735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,7 +1236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000015259, y: -0.3279419}
+  m_AnchoredPosition: {x: 0, y: -0.3279419}
   m_SizeDelta: {x: 903.47, y: 43.016}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1150074731
@@ -1936,7 +1936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1377078391
 Transform:
   m_ObjectHideFlags: 0
@@ -2356,7 +2356,6 @@ GameObject:
   - component: {fileID: 1511993940}
   - component: {fileID: 1511993941}
   - component: {fileID: 1511993942}
-  - component: {fileID: 1511993943}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2446,11 +2445,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.17, z: 1}
+  m_LocalScale: {x: 0.19999999, y: 0.16999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1264536018}
-  m_Father: {fileID: 2090531929}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1511993937
 MonoBehaviour:
@@ -2565,10 +2564,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.040075302, y: -0.23573685}
+  m_Offset: {x: -0.040075302, y: 0.17955637}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2579,29 +2578,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.091983, y: 13.839933}
+  m_Size: {x: 6.091983, y: 13.009347}
   m_EdgeRadius: 0
---- !u!95 &1511993943
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31ccf04adbd325d4caa48b00ba3a9018, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1651797076
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,38 +3280,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1377078391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2090531928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2090531929}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2090531929
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090531928}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1511993936}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094379289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3527,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1391843505}
-  - {fileID: 2090531929}
+  - {fileID: 1511993936}
   - {fileID: 1768749308}
   - {fileID: 1377078391}
   - {fileID: 1827395873}
