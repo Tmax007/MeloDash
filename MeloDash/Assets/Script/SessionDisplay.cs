@@ -5,13 +5,10 @@ using UnityEngine;
 
 public class SessionDisplay : MonoBehaviour
 {
+    [SerializeField]
     TextMeshProUGUI text;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        text = gameObject.GetComponent<TextMeshProUGUI>();
-    }
 
     public void OnConnectionSuccess(int sessionNum)
     {
