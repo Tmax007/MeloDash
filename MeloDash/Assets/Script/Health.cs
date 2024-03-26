@@ -67,6 +67,11 @@ public class Health : MonoBehaviour
             }
         }
 
+        if(gameObject.name == "Player")
+        {
+            Debug.Log((int)Time.timeSinceLevelLoad + 1);
+        }
+
         if(regenerating && regenHealth)
         {
             healthRegeneration();
