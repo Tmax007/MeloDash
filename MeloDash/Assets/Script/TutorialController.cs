@@ -13,7 +13,9 @@ public class TutorialController : MonoBehaviour
     //Enum storing the various stages of the tutorial.
     public enum tutorialState {dodgeTest, lastSecondDodgeTest, shootingTest}
 
-    public tutorialState state;
+    public tutorialState Tstate;
+
+    public int state;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class TutorialController : MonoBehaviour
     void Update()
     {
         //Set the spawner to spawn destructible enemies if in the shootingTest state.
-        if(state == tutorialState.shootingTest)
+        if(Tstate == tutorialState.shootingTest)
         {
             //verticalEnemySpawner.spawnDestructible = true;
         }
@@ -37,7 +39,7 @@ public class TutorialController : MonoBehaviour
         }
 
         //Enable the player's last-second dodging if in the lastSecondDodgeTest state.
-        if(state == tutorialState.lastSecondDodgeTest)
+        if(Tstate == tutorialState.lastSecondDodgeTest)
         {
             playerLastSecondDodge.enabled = true;
             Debug.Log("A");

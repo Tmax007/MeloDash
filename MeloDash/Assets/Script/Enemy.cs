@@ -44,8 +44,11 @@ public class Enemy : MonoBehaviour
             {
                 reachedSnapPoint = true;
 
-                // Update the score when the enemy reaches the snap point
-                scoreManager.UpdateScore(1);
+                if(scoreManager != null)
+                {
+                    // Update the score when the enemy reaches the snap point
+                    scoreManager.UpdateScore(1);
+                }
 
                 // Trigger particle system
                 if (destructionParticles != null)
