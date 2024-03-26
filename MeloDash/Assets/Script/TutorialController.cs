@@ -28,12 +28,12 @@ public class TutorialController : MonoBehaviour
         //Set the spawner to spawn destructible enemies if in the shootingTest state.
         if(state == tutorialState.shootingTest)
         {
-            verticalEnemySpawner.spawnDestructible = true;
+            //verticalEnemySpawner.spawnDestructible = true;
         }
         //Set the spawner to spawn regular enemies if not in the shootingTest state.
         else
         {
-            verticalEnemySpawner.spawnDestructible = false;
+           // verticalEnemySpawner.spawnDestructible = false;
         }
 
         //Enable the player's last-second dodging if in the lastSecondDodgeTest state.

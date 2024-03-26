@@ -4,51 +4,29 @@ using UnityEngine;
 
 public class DiagonalEnemySpawner : MonoBehaviour
 {
-    public Transform[] lanes;
-    public GameObject enemyPrefab;
-    public float[] laneSpawnRates;
-
+    public Transform snapPoint;
+    public GameObject destructibleEnemyPrefab;
     public float descentSpeed = 2.0f;
 
-    private float[] laneTimers;
+    public float[] beatTimestamps; // Array to store beat timestamps
+    public int currentBeatIndex = 0; // Index of the current beat
 
-    void Start()
+    // Index of the spawner
+    public int spawnerIndex;
+
+    public void SpawnDestructibleEnemy()
     {
-        // Initialize the lane timers array with length of the lanes array
-        laneTimers = new float[lanes.Length];
-    }
+        // Instantiate a new destructible enemy at the spawner's position
+        GameObject newEnemy = Instantiate(destructibleEnemyPrefab, transform.position, Quaternion.identity);
 
-    void Update()
-    {
-        // Iterate over each lane
-        for (int i = 0; i < lanes.Length; i++)
-        {
-            // Increment timer 
-            laneTimers[i] += Time.deltaTime;
-
-            // Check if it's time to spawn an enemy 
-            if (laneTimers[i] >= laneSpawnRates[i])
-            {
-                SpawnEnemy(i);
-
-                // Reset timer
-                laneTimers[i] = 0;
-            }
-        }
-    }
-
-    void SpawnEnemy(int laneIndex)
-    {
-        // Instantiate a new enemy
-        GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-
-        // Get Enemy component
+        // Get the EnemyMovement component of the spawned enemy
         Enemy enemyMovement = newEnemy.GetComponent<Enemy>();
 
+        // If EnemyMovement component exists
         if (enemyMovement != null)
         {
-            // Set destination of enemy to the position of current lane
-            enemyMovement.SetDestination(lanes[laneIndex].position);
+            // Set destination of the enemy to snap point's position
+            enemyMovement.SetDestination(snapPoint.position);
 
             // Set descent speed of enemy
             enemyMovement.SetDescentSpeed(descentSpeed);
