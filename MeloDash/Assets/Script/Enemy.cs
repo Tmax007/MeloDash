@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public ParticleSystem destructionParticles;
     private Vector3 destination;
     private float descentSpeed;
 
@@ -11,10 +10,13 @@ public class Enemy : MonoBehaviour
 
     public ScoreManager scoreManager;
 
+
     void Start()
     {
         // Find the ScoreManager GameObject and get its ScoreManager component
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+
+        destructionParticles = GameObject.FindObjectOfType<ParticleSystem>();
     }
 
     // Set destination point for enemy to move towards
@@ -42,9 +44,21 @@ public class Enemy : MonoBehaviour
             {
                 reachedSnapPoint = true;
 
-                // Update the score when the enemy reaches the snap point
-                scoreManager.UpdateScore(1);
+                if(scoreManager != null)
+                {
+                    // Update the score when the enemy reaches the snap point
+                    scoreManager.UpdateScore(1);
+                }
 
+                // Trigger particle system
+                if (destructionParticles != null)
+                {
+                    // Set the position of the particle system to the enemy's position
+                    destructionParticles.transform.position = transform.position;
+                    destructionParticles.Play();
+                }
+
+                // Destroy the enemy GameObject
                 Destroy(gameObject);
             }
         }

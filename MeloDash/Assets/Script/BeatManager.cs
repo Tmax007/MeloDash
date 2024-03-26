@@ -3,15 +3,17 @@ using System.Collections.Generic;
 
 public class BeatManager : MonoBehaviour
 {
-    // List to store beat data (timestamp and associated enemy spawner index)
+    // List to store beat data (timestamp and associated enemy spawner indices)
     public List<BeatTimestampLoader.BeatData> beatDataList;
     public BeatTimestampLoader loader;
 
     private float songStartTime;
     public int currentBeatIndex;
-    public int[] spawnerIndices; // Change to int[] to store multiple spawn index values
+    public int[] regularSpawnerIndices;
+    public int[] destructibleSpawnerIndices;
     // Reference to the enemy spawners
     public List<VerticalEnemySpawner> enemySpawners;
+    public List<DiagonalEnemySpawner> destructibleEnemySpawners;
 
     void Start()
     {
@@ -23,7 +25,19 @@ public class BeatManager : MonoBehaviour
 
         beatDataList = loader.beatDataList;
         int l = beatDataList.Count;
+
+        // Initialize beat timestamps for vertical enemy spawners
         foreach (var spawner in enemySpawners)
+        {
+            spawner.beatTimestamps = new float[l];
+            for (int i = 0; i < l; i++)
+            {
+                spawner.beatTimestamps[i] = beatDataList[i].timestamp;
+            }
+        }
+
+        // Initialize beat timestamps for diagonal enemy spawners
+        foreach (var spawner in destructibleEnemySpawners)
         {
             spawner.beatTimestamps = new float[l];
             for (int i = 0; i < l; i++)
@@ -56,18 +70,34 @@ public class BeatManager : MonoBehaviour
     void SpawnEnemies(int beatIndex)
     {
         // Get the associated enemy spawner indices for this beat
-        spawnerIndices = beatDataList[currentBeatIndex].spawnerIndices;
+        regularSpawnerIndices = beatDataList[currentBeatIndex].regularEnemySpawnerIndices;
+        destructibleSpawnerIndices = beatDataList[currentBeatIndex].destructibleEnemySpawnerIndices;
 
-        // Spawn enemies using the corresponding enemy spawners
-        foreach (int index in spawnerIndices)
+        // Spawn regular enemies using the corresponding enemy spawners
+        foreach (int index in regularSpawnerIndices)
         {
+            // Check if the index is valid for vertical enemy spawners
             if (index >= 0 && index < enemySpawners.Count)
             {
                 enemySpawners[index].SpawnVerticalEnemy();
             }
             else
             {
-                Debug.LogError("Invalid enemy spawner index: " + index);
+                Debug.LogError("Invalid regular enemy spawner index: " + index);
+            }
+        }
+
+        // Spawn destructible enemies using the corresponding enemy spawners
+        foreach (int index in destructibleSpawnerIndices)
+        {
+            // Check if the index is valid for destructible enemy spawners
+            if (index >= 0 && index < destructibleEnemySpawners.Count)
+            {
+                destructibleEnemySpawners[index].SpawnDestructibleEnemy();
+            }
+            else
+            {
+                Debug.LogError("Invalid destructible enemy spawner index: " + index);
             }
         }
     }

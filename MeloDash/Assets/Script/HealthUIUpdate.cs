@@ -42,7 +42,7 @@ public class HealthUIUpdate : MonoBehaviour
     void UpdateUINumber()
     {
         text.text = startText + playerHealth.healthNum.ToString();
-        Debug.Log(playerHealth.healthNum);
+        //Debug.Log(playerHealth.healthNum);
     }
 
 }
