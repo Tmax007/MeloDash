@@ -10,8 +10,9 @@ public class TutorialController : MonoBehaviour
     //0 = dodgeTest, 1 = shootingTest, 2 = LSDTest.
     public int state;
 
-    //Reference for the tutorial's enemy spawner.
+    //Reference for the scripts used by tutorial's enemy spawner.
     public VerticalEnemySpawner verticalEnemySpawner;
+    public DiagonalEnemySpawner diagonalEnemySpawner;
 
     //Reference for the player.
     public GameObject player;
@@ -29,21 +30,43 @@ public class TutorialController : MonoBehaviour
     public Button prevButton;
     public Button exitButton;
 
+    public float timeTillSpawn;
+    float originalTime;
+
+    bool spawnDestructibleEnemy = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        //Spawns an enemy in the middle lane every 3 (as of now) seconds.
-        verticalEnemySpawner.InvokeRepeating("SpawnVerticalEnemy", 3, 3);
-
         LSD = player.GetComponent<LastSecondZone>();
         shoot = player.GetComponent<Shooting>();
 
         LSDVisualizer = player.transform.GetChild(1).gameObject;
+
+        originalTime = timeTillSpawn;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        timeTillSpawn -= Time.deltaTime;
+
+        if(timeTillSpawn <= 0 ) 
+        { 
+            if(spawnDestructibleEnemy )
+            {
+                diagonalEnemySpawner.SpawnDestructibleEnemy();
+            }
+            else
+            {
+                verticalEnemySpawner.SpawnVerticalEnemy();
+            }
+
+            timeTillSpawn = originalTime;
+        
+        }
+
         //Change tutorial text if in the dodgeTest state.
         if(state == 0)
         {
@@ -62,12 +85,15 @@ public class TutorialController : MonoBehaviour
             shoot.enabled = true;
             tutorialText.text = "Space to shoot projectiles that can destroy the special orbs. Only these orbs can be destroyed.";
 
+            spawnDestructibleEnemy = true;
         }
         //Set the spawner to spawn regular enemies & disable player shooting if not in the shootingTest state.
         else
         {
            //verticalEnemySpawner.spawnDestructible = false;
            shoot.enabled = false;
+
+            spawnDestructibleEnemy = false;
         }
 
         //Enable the player's last-second dodging, change tutorial text, & enable the LSDVisualizer if in the LSDTest state.

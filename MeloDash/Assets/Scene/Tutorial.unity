@@ -169,11 +169,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   verticalEnemySpawner: {fileID: 1742382626}
+  diagonalEnemySpawner: {fileID: 1742382625}
   player: {fileID: 1699982429}
   tutorialText: {fileID: 570903051}
   nextButton: {fileID: 2042575915}
   prevButton: {fileID: 328328467}
   exitButton: {fileID: 792747883}
+  timeTillSpawn: 3
 --- !u!1001 &218615748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2223,8 +2225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 0}
-  destructibleEnemyPrefab: {fileID: 0}
+  snapPoint: {fileID: 1176753839}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 2
   beatTimestamps: []
   currentBeatIndex: 0

@@ -1165,6 +1165,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &872354056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+  m_PrefabInstance: {fileID: 1403695748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac8a11fd5df9f84ab594ba16c73f4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &923532499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,7 +2254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade52ff209114c34f9b606f65e650a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 872354056}
   regenBar: {fileID: 1152202615}
 --- !u!114 &1157564740
 MonoBehaviour:
@@ -2865,7 +2876,7 @@ PrefabInstance:
       objectReference: {fileID: 611046101}
     - target: {fileID: 2949584829870247198, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: m_LocalPosition.x

@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2126499672, guid: 7a1834f74288e954badacf0aaf3d2e1d, type: 3}
-  m_Color: {r: 0.7264151, g: 0.16903995, b: 0.16903995, a: 1}
+  m_Color: {r: 0.8490566, g: 0.5274467, b: 0.1094695, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -166,11 +166,11 @@ MonoBehaviour:
   healthNum: 3
   damageSourceLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   regenHealth: 0
   regenTime: 0
   currentTime: 0
-  healthUI: {fileID: 0}
+  healthUI: {fileID: 3377713487389408664}
   scoreManager: {fileID: 0}
 --- !u!114 &-5604240897549750124
 MonoBehaviour:
@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4848577453671847741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 2235957375567409030}
   - component: {fileID: 7652032288884820607}
   - component: {fileID: 3914352805623392880}
+  - component: {fileID: 3377713487389408664}
   m_Layer: 5
   m_Name: HealthDisplay
   m_TagString: Untagged
@@ -353,10 +354,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a88ee6506ba7df248b4199985741e0b1, type: 2}
+  m_sharedMaterial: {fileID: 5374583586668477998, guid: a88ee6506ba7df248b4199985741e0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -380,8 +381,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 93.66
-  m_fontSizeBase: 93.66
+  m_fontSize: 8.85
+  m_fontSizeBase: 8.85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -422,3 +423,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3377713487389408664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623919151023906452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade52ff209114c34f9b606f65e650a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: -1361195620244560037}
+  regenBar: {fileID: 0}
