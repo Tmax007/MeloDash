@@ -26,6 +26,8 @@ public class Health : MonoBehaviour
 
     public ScoreManager scoreManager;
 
+    AudioSource damageSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,8 @@ public class Health : MonoBehaviour
 
             TelemetryLogger.Log(this, "Start game.");
         }
+
+        damageSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -93,6 +97,7 @@ public class Health : MonoBehaviour
 
             if (gameObject.name == "Player" && healthNum > 0)
             {
+                damageSound.Play();
 
                 var data = new DamageDeathEventData()
                 {
