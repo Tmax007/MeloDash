@@ -992,11 +992,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1413250449}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &722031429
 SpriteRenderer:
@@ -1077,12 +1075,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 1413250449}
-  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  laneSpawnRates:
-  - 4
+  snapPoint: {fileID: 1413250449}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 2
+  beatTimestamps: []
+  currentBeatIndex: 0
+  spawnerIndex: 0
 --- !u!1 &741098180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,11 +1538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1119333980}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &1094845182
 SpriteRenderer:
@@ -1625,12 +1621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 1119333980}
-  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  laneSpawnRates:
-  - 2
+  snapPoint: {fileID: 1119333980}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 2
+  beatTimestamps: []
+  currentBeatIndex: 0
+  spawnerIndex: 0
 --- !u!1 &1119333979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade52ff209114c34f9b606f65e650a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1511993937}
+  playerHealth: {fileID: 0}
   regenBar: {fileID: 1152202615}
 --- !u!114 &1157564740
 MonoBehaviour:
@@ -2534,37 +2530,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1264536017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1264536018}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1264536018
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264536017}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0.047109716}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1511993936}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1316496979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,11 +2563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 741098181}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &1316496981
 SpriteRenderer:
@@ -2683,12 +2646,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 741098181}
-  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  laneSpawnRates:
-  - 4
+  snapPoint: {fileID: 741098181}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
+  spawnerIndex: 0
 --- !u!1 &1377078390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,6 +2831,95 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1001 &1403695748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 295599632429047928, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: lanes.Array.data[0]
+      value: 
+      objectReference: {fileID: 579460431}
+    - target: {fileID: 295599632429047928, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: lanes.Array.data[1]
+      value: 
+      objectReference: {fileID: 741098181}
+    - target: {fileID: 295599632429047928, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: lanes.Array.data[2]
+      value: 
+      objectReference: {fileID: 1119333980}
+    - target: {fileID: 295599632429047928, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: lanes.Array.data[3]
+      value: 
+      objectReference: {fileID: 1125497879}
+    - target: {fileID: 295599632429047928, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: lanes.Array.data[4]
+      value: 
+      objectReference: {fileID: 1413250449}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 611046101}
+    - target: {fileID: 2949584829870247198, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329096381752694130, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1157564739}
+    - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 611046101}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
 --- !u!1 &1413250448
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,246 +3165,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450187096}
   m_CullTransparentMesh: 1
---- !u!1 &1511993933
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1511993936}
-  - component: {fileID: 1511993935}
-  - component: {fileID: 1511993934}
-  - component: {fileID: 1511993937}
-  - component: {fileID: 1511993939}
-  - component: {fileID: 1511993940}
-  - component: {fileID: 1511993941}
-  - component: {fileID: 1511993942}
-  m_Layer: 9
-  m_Name: Player
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1511993934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b59d7b9ef9dc841a5cbf930016ebfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLane: 2
-  movSpeed: 8
-  lanes:
-  - {fileID: 579460431}
-  - {fileID: 741098181}
-  - {fileID: 1119333980}
-  - {fileID: 1125497879}
-  - {fileID: 1413250449}
---- !u!212 &1511993935
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: -426433577, guid: 140afa450214d664fa2cb30d39efb9ff, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1511993936
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.43, y: 0, z: 0}
-  m_LocalScale: {x: 0.20000005, y: 0.17000002, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1264536018}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1511993937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac8a11fd5df9f84ab594ba16c73f4bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthNum: 5
-  damageSourceLayer:
-    serializedVersion: 2
-    m_Bits: 320
-  regenHealth: 1
-  regenTime: 5
-  currentTime: 0
-  healthUI: {fileID: 1157564739}
-  scoreManager: {fileID: 611046101}
---- !u!50 &1511993939
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &1511993940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b964e1321fc0042b3fb9cb313cf782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 1264536018}
-  projectilePrefab: {fileID: 932383172355896751, guid: 09eb6d1efa1a8824bbc0cacab14a1228, type: 3}
-  fireRate: 0.5
-  projectileSpeed: 10
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  enemiesDestroyed: 0
---- !u!114 &1511993941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef833025fb367d045995e539ff7bd930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoneX: 1.2
-  zoneY: 3.96
-  displacementY: 0.68
-  scoreManager: {fileID: 611046101}
---- !u!61 &1511993942
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511993933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.040075302, y: 0.17955637}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.4545455, y: 14.5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.091983, y: 13.009347}
-  m_EdgeRadius: 0
 --- !u!1 &1513358214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,11 +3433,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 579460431}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!114 &1651797081
 MonoBehaviour:
@@ -3639,12 +3449,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 579460431}
-  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  laneSpawnRates:
-  - 3
+  snapPoint: {fileID: 579460431}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  beatTimestamps: []
+  currentBeatIndex: 0
+  spawnerIndex: 0
 --- !u!1 &1655436980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,11 +3622,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1125497879}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
-  spawnDestructible: 0
   spawnerIndex: 0
 --- !u!212 &1714456947
 SpriteRenderer:
@@ -3897,12 +3705,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a72e9490254ee4419f5c3fac9d567be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanes:
-  - {fileID: 1125497879}
-  enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
-  laneSpawnRates:
-  - 3
+  snapPoint: {fileID: 1125497879}
+  destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 2
+  beatTimestamps: []
+  currentBeatIndex: 0
+  spawnerIndex: 0
 --- !u!1 &1752567727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3935,7 +3743,8 @@ MonoBehaviour:
   beatTimestampsCSV: {fileID: 4900000, guid: 612aed39f08fcb84e90a373068c646bb, type: 3}
   beatDataList:
   - timestamp: 0
-    spawnerIndices: 
+    regularEnemySpawnerIndices: 
+    destructibleEnemySpawnerIndices: 
 --- !u!4 &1752567729
 Transform:
   m_ObjectHideFlags: 0
@@ -4682,13 +4491,15 @@ MonoBehaviour:
   beatDataList: []
   loader: {fileID: 1752567728}
   currentBeatIndex: 0
-  spawnerIndices: 
+  regularSpawnerIndices: 
+  destructibleSpawnerIndices: 
   enemySpawners:
   - {fileID: 1651797080}
   - {fileID: 1316496980}
   - {fileID: 1094845181}
   - {fileID: 1714456946}
   - {fileID: 722031428}
+  destructibleEnemySpawners: []
 --- !u!4 &2094379292
 Transform:
   m_ObjectHideFlags: 0
@@ -4801,7 +4612,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1391843505}
   - {fileID: 1827395873}
-  - {fileID: 1511993936}
+  - {fileID: 1403695748}
   - {fileID: 1768749308}
   - {fileID: 69263358}
   - {fileID: 1377078391}
