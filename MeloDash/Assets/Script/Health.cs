@@ -26,16 +26,17 @@ public class Health : MonoBehaviour
 
     public ScoreManager scoreManager;
 
+    AudioSource damageSound;
+
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = healthNum;
         regenerating = false;
 
-        if(gameObject.name == "Player")
+        if (gameObject.name == "Player")
         {
             playerControls = gameObject.GetComponent<LaneCollection>();
-            healthUI.SendMessage("UpdateUINumber");
 
             //Sets the player to die after 125 seconds so that data can still be logged in winning attempts during testing.
             //Being set to occur after 125 seconds means that it can only happen after the player's gotten through everything.
@@ -44,6 +45,7 @@ public class Health : MonoBehaviour
             TelemetryLogger.Log(this, "Start game.");
         }
 
+        damageSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -77,6 +79,8 @@ public class Health : MonoBehaviour
             healthRegeneration();
         }
 
+        healthUI.SendMessage("UpdateUINumber");
+
         //Debug.Log(regenerating);
 
     }
@@ -91,11 +95,9 @@ public class Health : MonoBehaviour
             currentTime = 0;
             regenerating = true;
 
-            //SendMessage("UpdateUINumber", healthUI);
-
-            if(gameObject.name == "Player" && healthNum > 0)
+            if (gameObject.name == "Player" && healthNum > 0)
             {
-                healthUI.SendMessage("UpdateUINumber");
+                damageSound.Play();
 
                 var data = new DamageDeathEventData()
                 {
@@ -118,12 +120,6 @@ public class Health : MonoBehaviour
         {
             currentTime = 0;
             healthNum++;
-
-            if(gameObject.name == "Player")
-            {
-                healthUI.SendMessage("UpdateUINumber");
-            }
-            
         }
 
         if(healthNum == maxHealth)

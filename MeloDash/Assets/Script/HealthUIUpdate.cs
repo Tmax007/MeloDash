@@ -30,19 +30,21 @@ public class HealthUIUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerHealth.healthNum <= 0)
+        if(playerHealth.healthNum <= 0 && loader != null)
         {
             loader.loadScene("GameOverScreen");
         }
 
-        regenBar.fillAmount = playerHealth.currentTime / playerHealth.regenTime;
-
+        if(regenBar == null)
+        {
+            regenBar.fillAmount = playerHealth.currentTime / playerHealth.regenTime;
+        }
     }
 
     void UpdateUINumber()
     {
         text.text = startText + playerHealth.healthNum.ToString();
-        //Debug.Log(playerHealth.healthNum);
+        Debug.Log(playerHealth.healthNum);
     }
 
 }
