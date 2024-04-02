@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1413250449}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
-  descentSpeed: 2
+  descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1119333980}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
-  descentSpeed: 2
+  descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -3828,7 +3828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1125497879}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
-  descentSpeed: 2
+  descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -4620,7 +4620,12 @@ MonoBehaviour:
   - {fileID: 1094845181}
   - {fileID: 1714456946}
   - {fileID: 722031428}
-  destructibleEnemySpawners: []
+  destructibleEnemySpawners:
+  - {fileID: 1651797081}
+  - {fileID: 1316496983}
+  - {fileID: 1094845184}
+  - {fileID: 1714456949}
+  - {fileID: 722031431}
 --- !u!4 &2094379292
 Transform:
   m_ObjectHideFlags: 0
