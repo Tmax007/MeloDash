@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/TempTutorial.unity
     guid: 5dae4ff3e0192164c82d732c31eeb22e
+  - enabled: 1
+    path: Assets/Scene/EndScreen.unity
+    guid: 06365d6b7e121d44eb4cbb5ef13787c8
   m_configObjects: {}

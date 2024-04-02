@@ -25,6 +25,8 @@ public class HealthUIUpdate : MonoBehaviour
         loader = GetComponent<SceneLoader>();
 
         startText = text.text;
+
+        Invoke("endGame", 125);
     }
 
     // Update is called once per frame
@@ -45,6 +47,11 @@ public class HealthUIUpdate : MonoBehaviour
     {
         text.text = startText + playerHealth.healthNum.ToString();
         Debug.Log(playerHealth.healthNum);
+    }
+
+    void endGame()
+    {
+        loader.loadScene("EndScreen");
     }
 
 }
