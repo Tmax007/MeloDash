@@ -3103,30 +3103,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5786220964353838277, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
-      propertyPath: m_Pitch
-      value: 1.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786220964353838277, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
-      propertyPath: Priority
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786220964353838277, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786220964353838277, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
-      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 1.1
-      objectReference: {fileID: 0}
     - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 1157564739}
-    - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
-      propertyPath: regenTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: scoreManager
       value: 

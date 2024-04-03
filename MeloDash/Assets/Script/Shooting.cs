@@ -56,9 +56,4 @@ public class Shooting : MonoBehaviour
             Debug.LogWarning("Projectile component not found in projectile prefab.");
         }
     }
-
-    private void OnDestroy()
-    {
-        TelemetryLogger.Log(this, "# of destructible enemies destroyed: " + enemiesDestroyed);
-    }
 }

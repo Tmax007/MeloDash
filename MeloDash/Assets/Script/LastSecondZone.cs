@@ -16,12 +16,15 @@ public class LastSecondZone : MonoBehaviour
 
     Health health;
 
-    int dodgeNum;
+    [HideInInspector]
+    public int dodgeNum;
 
     //Checks if an object with the "Player", "Enemy", or both layers are in the raycast.
     bool enemyInCast = false;
 
     public ScoreManager scoreManager;
+
+    AudioSource[] LSDSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,8 @@ public class LastSecondZone : MonoBehaviour
         health = gameObject.GetComponent<Health>();
         dodgeNum = 0;
         //Debug.Log(enemyMask);
+
+        LSDSound = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,12 +45,14 @@ public class LastSecondZone : MonoBehaviour
         //If the player moves left or right while enemyInCast is true, they gain a score bonus of 10.
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && controls.currentLane > 0 && enemyInCast == true)
         {
+            LSDSound[1].Play();
             scoreManager.UpdateScore(10);
             dodgeNum++;
         }
 
         if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && controls.currentLane < controls.lanes.Length - 1 && enemyInCast == true)
         {
+            LSDSound[1].Play();
             scoreManager.UpdateScore(10);
             dodgeNum++;
         }
@@ -75,10 +82,5 @@ public class LastSecondZone : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + displacementY), new Vector3(zoneX, zoneY, 0));
-    }
-
-    private void OnDestroy()
-    {
-        TelemetryLogger.Log(this, "# of last-second dodges performed: " + dodgeNum);
     }
 }

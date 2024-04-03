@@ -27,6 +27,6 @@ public class ScoreManager : MonoBehaviour
         // Update the UI to display the new score
         scoreText.text = "Score: " + Init.score.ToString();
 
-        audio.Play();
+        //audio.Play();
     }
 }

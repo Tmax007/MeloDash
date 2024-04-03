@@ -8,12 +8,14 @@ public class Init : MonoBehaviour
     public static bool beenToTutorial;
     public static int score;
     public static int highScore;
+    public static int run;
 
     // Start is called before the first frame update
     void Start()
     {
         beenToTutorial = false;
         highScore = 0;
+        run = 0;
 
         SceneLoader loader = gameObject.GetComponent<SceneLoader>();
 

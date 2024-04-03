@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -26,7 +27,11 @@ public class Health : MonoBehaviour
 
     public ScoreManager scoreManager;
 
-    AudioSource damageSound;
+    LastSecondZone LSD;
+
+    Shooting playerShoots;
+
+    AudioSource[] damageSound;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +42,13 @@ public class Health : MonoBehaviour
         if (gameObject.name == "Player")
         {
             playerControls = gameObject.GetComponent<LaneCollection>();
+            LSD = gameObject.GetComponent<LastSecondZone>();
+            playerShoots = gameObject.GetComponent<Shooting>();
+
+            if(SceneManager.GetActiveScene().name == "MainGame")
+            {
+                Init.run++;
+            }
 
             //Sets the player to die after 125 seconds so that data can still be logged in winning attempts during testing.
             //Being set to occur after 125 seconds means that it can only happen after the player's gotten through everything.
@@ -45,7 +57,7 @@ public class Health : MonoBehaviour
             TelemetryLogger.Log(this, "Start game.");
         }
 
-        damageSound = GetComponent<AudioSource>();
+        damageSound = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,11 +70,14 @@ public class Health : MonoBehaviour
             if (gameObject.name == "Player")
             {
 
-                var data = new DamageDeathEventData()
+                var data = new DeathEventData()
                 {
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
                     lane = playerControls.currentLane,
-                    finalScore = Init.score
+                    finalScore = Init.score,
+                    LastSecondDodges = LSD.dodgeNum,
+                    enemiesDestroyed = playerShoots.enemiesDestroyed,
+                    runNumber = Init.run
                 };
 
                 TelemetryLogger.Log(this, "PlayerDeath", data);
@@ -97,12 +112,13 @@ public class Health : MonoBehaviour
 
             if (gameObject.name == "Player" && healthNum > 0)
             {
-                damageSound.Play();
+                damageSound[0].Play();
 
-                var data = new DamageDeathEventData()
+                var data = new DamageEventData()
                 {
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
-                    lane = playerControls.currentLane
+                    lane = playerControls.currentLane,
+                    runNumber = Init.run
                 };
 
                 TelemetryLogger.Log(this, "PlayerDamage", data);
@@ -130,13 +146,30 @@ public class Health : MonoBehaviour
     }
 
     [System.Serializable]
-    public struct DamageDeathEventData
+    public struct DamageEventData
+    {
+        public int secondsIntoLevel;
+
+        public int lane;
+
+        public int runNumber;
+    }
+
+    [System.Serializable]
+    public struct DeathEventData
     {
         public int secondsIntoLevel;
 
         public int lane;
 
         public int finalScore;
+
+        public int LastSecondDodges;
+
+        public int enemiesDestroyed;
+
+        public int runNumber;
+
     }
 
     //This exists solely for telemetry reasons, so that we can get data from players who make it to the end.
