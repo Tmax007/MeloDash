@@ -6,9 +6,13 @@ public class ScoreManager : MonoBehaviour
 {
     public TMP_Text scoreText;
 
+    AudioSource audio;
+
     private void Start()
     {
         Init.score = 0;
+
+        audio = GetComponent<AudioSource>();
     }
 
     // Singleton instance of ScoreManager
@@ -22,5 +26,7 @@ public class ScoreManager : MonoBehaviour
 
         // Update the UI to display the new score
         scoreText.text = "Score: " + Init.score.ToString();
+
+        audio.Play();
     }
 }
