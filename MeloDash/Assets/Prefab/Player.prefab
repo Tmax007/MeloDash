@@ -198,6 +198,7 @@ MonoBehaviour:
   zoneX: 1.2
   zoneY: 3.96
   displacementY: 0.68
+  dodgeNum: 0
   scoreManager: {fileID: 0}
 --- !u!61 &5486407495953075084
 BoxCollider2D:

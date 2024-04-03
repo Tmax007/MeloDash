@@ -14,7 +14,7 @@ public class LastSecondZone : MonoBehaviour
     LayerMask enemyMask;
     LaneCollection controls;
 
-    Health health;
+    //Health health;
 
     [HideInInspector]
     public int dodgeNum;
@@ -32,7 +32,7 @@ public class LastSecondZone : MonoBehaviour
         enemyMask = LayerMask.GetMask("Enemy");
         controls = gameObject.GetComponent<LaneCollection>();
 
-        health = gameObject.GetComponent<Health>();
+        //health = gameObject.GetComponent<Health>();
         dodgeNum = 0;
         //Debug.Log(enemyMask);
 
@@ -56,7 +56,6 @@ public class LastSecondZone : MonoBehaviour
             scoreManager.UpdateScore(10);
             dodgeNum++;
         }
-
     }
 
     private void FixedUpdate()

@@ -1564,6 +1564,18 @@ PrefabInstance:
       propertyPath: lanes.Array.data[2]
       value: 
       objectReference: {fileID: 1097950315}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: enemyMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786762194240440811, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 2949584829870247198, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1770,6 +1782,7 @@ MonoBehaviour:
   zoneX: 1.2
   zoneY: 2.55
   displacementY: 0.68
+  dodgeNum: 0
   scoreManager: {fileID: 0}
 --- !u!114 &1231673239
 MonoBehaviour:

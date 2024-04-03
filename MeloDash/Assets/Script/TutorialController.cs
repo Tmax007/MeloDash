@@ -109,7 +109,7 @@ public class TutorialController : MonoBehaviour
         //Disable the player's last-second dodging & the LSDVisualizer if not in the LSDTest state.
         else
         {
-            LSD.enabled = false;
+            //LSD.enabled = false;
             LSDVisualizer.SetActive(false);
             nextButton.interactable = true;
         }
