@@ -104,6 +104,7 @@ public class TutorialController : MonoBehaviour
             tutorialText.text = "Dodge orbs just before they touch you for a score bonus. The red rectangle shows the area an orb needs to be in for this bonus.";
             nextButton.interactable = false;
             exitButton.interactable = true;
+            Init.beenToTutorial = true;
         }
         //Disable the player's last-second dodging & the LSDVisualizer if not in the LSDTest state.
         else

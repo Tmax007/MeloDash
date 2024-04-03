@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-
     public void loadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if(sceneName == "MainGame" && Init.beenToTutorial == false)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
