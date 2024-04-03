@@ -999,7 +999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af35a4bd7ca861048b8377cdff2a7745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   scoreText: {fileID: 1655436982}
 --- !u!4 &611046102
 Transform:
@@ -3029,7 +3028,7 @@ PrefabInstance:
       objectReference: {fileID: 1157564739}
     - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: regenTime
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: scoreManager
@@ -4734,7 +4733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af35a4bd7ca861048b8377cdff2a7745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   scoreText: {fileID: 1655436982}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

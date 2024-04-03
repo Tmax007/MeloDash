@@ -62,7 +62,7 @@ public class Health : MonoBehaviour
                 {
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
                     lane = playerControls.currentLane,
-                    finalScore = scoreManager.score
+                    finalScore = Init.score
                 };
 
                 TelemetryLogger.Log(this, "PlayerDeath", data);
