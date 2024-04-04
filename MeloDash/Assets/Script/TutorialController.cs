@@ -30,6 +30,8 @@ public class TutorialController : MonoBehaviour
     public Button prevButton;
     public Button exitButton;
 
+    public GameObject healthDisplay;
+
     public float timeTillSpawn;
     float originalTime;
 
@@ -70,7 +72,7 @@ public class TutorialController : MonoBehaviour
         //Change tutorial text if in the dodgeTest state.
         if(state == 0)
         {
-            tutorialText.text = "A/left arrow key and B/right arrow key to move left and right respectively. Dodge the orbs coming from the top of the screen.";
+            tutorialText.text = "A/left arrow key and B/right arrow key to move left and right respectively. Dodge the orbs coming from the top of the screen. Click the \"Next\" button on the right to move to the next stage.";
             prevButton.interactable = false;
         }
         else
@@ -78,12 +80,18 @@ public class TutorialController : MonoBehaviour
             prevButton.interactable = true;
         }
 
+        if (state == 1)
+        {
+            healthDisplay.SetActive(true);
+            tutorialText.text = "In the top left corner is your health. Getting hit by an orb will cause you to lose health. Avoid the orbs for long enough, and it'll regenerate over time.";
+        }
+
         //Set the spawner to spawn destructible enemies, change tutorial text, & enable player shooting if in the shootingTest state.
-        if(state == 1)
+        if(state == 2)
         {
             //verticalEnemySpawner.spawnDestructible = true;
             shoot.enabled = true;
-            tutorialText.text = "Space to shoot projectiles that can destroy the special orbs. Only these orbs can be destroyed.";
+            tutorialText.text = "Space to shoot projectiles that can destroy yellow orbs. Only these orbs can be destroyed. The number on the orb represents how much health it has left until it's destroyed.";
 
             spawnDestructibleEnemy = true;
         }
@@ -97,11 +105,11 @@ public class TutorialController : MonoBehaviour
         }
 
         //Enable the player's last-second dodging, change tutorial text, & enable the LSDVisualizer if in the LSDTest state.
-        if(state == 2)
+        if(state == 3)
         {
             LSD.enabled = true;
             LSDVisualizer.SetActive(true);
-            tutorialText.text = "Dodge orbs just before they touch you for a score bonus. The red rectangle shows the area an orb needs to be in for this bonus.";
+            tutorialText.text = "Dodge orbs just before they touch you for a score bonus. When this occurs, you'll hear a dinging noise. The red rectangle shows the area an orb needs to be in for this bonus.";
             nextButton.interactable = false;
             exitButton.interactable = true;
             Init.beenToTutorial = true;
@@ -117,7 +125,7 @@ public class TutorialController : MonoBehaviour
 
     public void increaseState()
     {
-        if(state < 2)
+        if(state < 3)
         {
             state++;
         }
