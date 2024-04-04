@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionParticles: {fileID: 0}
   scoreManager: {fileID: 0}
+  endReachedPointValue: 1
+  destructiblePointValue: 0
 --- !u!95 &3630384172662279510
 Animator:
   serializedVersion: 5

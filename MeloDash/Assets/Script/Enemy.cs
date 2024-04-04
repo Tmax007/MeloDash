@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     public ScoreManager scoreManager;
 
+    public int endReachedPointValue;
+    public int destructiblePointValue;
 
     void Start()
     {
@@ -44,12 +46,6 @@ public class Enemy : MonoBehaviour
             {
                 reachedSnapPoint = true;
 
-                if(scoreManager != null)
-                {
-                    // Update the score when the enemy reaches the snap point
-                    scoreManager.UpdateScore(1);
-                }
-
                 // Trigger particle system
                 if (destructionParticles != null)
                 {
@@ -72,5 +68,21 @@ public class Enemy : MonoBehaviour
 
         // Check if enemy's bounding box intersects with any of the camera's frustum planes
         return GeometryUtility.TestPlanesAABB(planes, GetComponent<Renderer>().bounds);
+    }
+
+    private void OnDestroy()
+    {
+        if (scoreManager != null)
+        {
+            if(reachedSnapPoint)
+            {
+                // Update the score when the enemy reaches the snap point
+                scoreManager.UpdateScore(endReachedPointValue);
+            }
+            else
+            {
+                scoreManager.UpdateScore(destructiblePointValue);
+            }
+        }
     }
 }

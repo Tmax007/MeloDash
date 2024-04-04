@@ -91,7 +91,7 @@ public class TutorialController : MonoBehaviour
         {
             //verticalEnemySpawner.spawnDestructible = true;
             shoot.enabled = true;
-            tutorialText.text = "Space to shoot projectiles that can destroy yellow orbs. Only these orbs can be destroyed. The number on the orb represents how much health it has left until it's destroyed.";
+            tutorialText.text = "Space to shoot projectiles that can destroy yellow orbs. Only these orbs can be destroyed. Destroying them rewards a large score bonus. The number on the orb represents how much health it has left until it's destroyed.";
 
             spawnDestructibleEnemy = true;
         }
