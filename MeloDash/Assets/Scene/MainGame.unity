@@ -3059,6 +3059,10 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 611046101}
+    - target: {fileID: 2867755797096381560, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: fireRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2949584829870247198, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3941,7 +3945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edd9ba2112ad1346b1cf275b076073c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTimestampsCSV: {fileID: 4900000, guid: 612aed39f08fcb84e90a373068c646bb, type: 3}
+  beatTimestampsCSV: {fileID: 4900000, guid: 9d5e72d877c29794ca58f74a1d1ea93b, type: 3}
   beatDataList:
   - timestamp: 0
     regularEnemySpawnerIndices: 

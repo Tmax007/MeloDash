@@ -186,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionParticles: {fileID: 0}
   scoreManager: {fileID: 0}
-  endReachPointValue: 0
-  destructiblePointValue: 10
+  endReachedPointValue: 0
+  destructiblePointValue: 20
 --- !u!1 &6919000396354925028
 GameObject:
   m_ObjectHideFlags: 0
