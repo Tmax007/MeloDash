@@ -13,9 +13,12 @@ public class Shooting : MonoBehaviour
     [HideInInspector]
     public int enemiesDestroyed;
 
+    AudioSource[] shootSound;
+
     private void Start()
     {
         enemiesDestroyed = 0;
+        shootSound = GetComponents<AudioSource>();
     }
 
     void Update()
@@ -50,6 +53,8 @@ public class Shooting : MonoBehaviour
 
             // Set the speed of the projectile
             projectile.SetSpeed(projectileSpeed);
+
+            shootSound[2].Play();
         }
         else
         {
