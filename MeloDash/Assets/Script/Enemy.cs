@@ -13,12 +13,16 @@ public class Enemy : MonoBehaviour
     public int endReachedPointValue;
     public int destructiblePointValue;
 
+    AudioSource destructionSound;
+
     void Start()
     {
         // Find the ScoreManager GameObject and get its ScoreManager component
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
         destructionParticles = GameObject.FindObjectOfType<ParticleSystem>();
+
+        //Debug.Log(gameObject.layer);
     }
 
     // Set destination point for enemy to move towards
@@ -79,7 +83,7 @@ public class Enemy : MonoBehaviour
                 // Update the score when the enemy reaches the snap point
                 scoreManager.UpdateScore(endReachedPointValue);
             }
-            else
+            else if (!reachedSnapPoint)
             {
                 scoreManager.UpdateScore(destructiblePointValue);
             }

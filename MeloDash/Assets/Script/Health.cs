@@ -58,6 +58,7 @@ public class Health : MonoBehaviour
         }
 
         damageSound = GetComponents<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -65,7 +66,7 @@ public class Health : MonoBehaviour
     {
         if(healthNum == 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
 
             if (gameObject.name == "Player")
             {
@@ -82,6 +83,7 @@ public class Health : MonoBehaviour
 
                 TelemetryLogger.Log(this, "PlayerDeath", data);
             }
+
         }
 
         if(gameObject.name == "Player")
@@ -110,10 +112,10 @@ public class Health : MonoBehaviour
             currentTime = 0;
             regenerating = true;
 
+            damageSound[0].Play();
+
             if (gameObject.name == "Player" && healthNum > 0)
             {
-                damageSound[0].Play();
-
                 var data = new DamageEventData()
                 {
                     secondsIntoLevel = (int)Time.timeSinceLevelLoad + 1,
@@ -122,7 +124,7 @@ public class Health : MonoBehaviour
                 };
 
                 TelemetryLogger.Log(this, "PlayerDamage", data);
-            }    
+            }
         }
     }
 

@@ -39,17 +39,12 @@ public class Projectile : MonoBehaviour
 
             targetHealth = hit.GetComponent<Health>();
 
-            targetHealth.healthNum--;
-
             if(targetHealth.healthNum == 0)
             {
                 playershoot.enemiesDestroyed++;
-
-                Debug.Log("A");
             }
 
             //Destroy the projectile
-            Destroy(gameObject);
         }
     }
 }

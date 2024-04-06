@@ -83,7 +83,7 @@ public class TutorialController : MonoBehaviour
         if (state == 1)
         {
             healthDisplay.SetActive(true);
-            tutorialText.text = "In the top left corner is your health. Getting hit by an orb will cause you to lose health. Avoid the orbs for long enough, and it'll regenerate over time.";
+            tutorialText.text = "In the lower left corner is your health. Getting hit by an orb will cause you to lose health. Avoid the orbs for long enough, and it'll regenerate over time.";
         }
 
         //Set the spawner to spawn destructible enemies, change tutorial text, & enable player shooting if in the shootingTest state.

@@ -232,10 +232,10 @@ RectTransform:
   - {fileID: 39151565}
   m_Father: {fileID: 1807286985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -3.4295044, y: -35.274933}
-  m_SizeDelta: {x: 166.72021, y: 47.45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 58, y: 129}
+  m_SizeDelta: {x: 166.72021, y: 47.450012}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &64889134
 MonoBehaviour:
@@ -1886,6 +1886,10 @@ PrefabInstance:
     - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: enemyMask.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677737700283748223, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2786762194240440811, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: Priority
