@@ -72,7 +72,7 @@ public class TutorialController : MonoBehaviour
         //Change tutorial text if in the dodgeTest state.
         if(state == 0)
         {
-            tutorialText.text = "A/left arrow key and B/right arrow key to move left and right respectively. Dodge the orbs coming from the top of the screen. Click the \"Next\" button on the right to move to the next stage.";
+            tutorialText.text = "\r\nControls: A/Left Arrow to Move Left, D/Right Arrow to Move Right. \nObjective: Dodge the falling orbs. \nStage Transition: Click \"Next\" to proceed to the next stage";
             prevButton.interactable = false;
         }
         else

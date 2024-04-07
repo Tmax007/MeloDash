@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -1361195620244560037}
   - component: {fileID: -5604240897549750124}
   - component: {fileID: 7171528317256980519}
+  - component: {fileID: 1595476895308757084}
   m_Layer: 8
   m_Name: Destructible Enemy
   m_TagString: Untagged
@@ -285,6 +286,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1595476895308757084
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4601460923525205300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52b5b529894a3ba4b84caad46c177270, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6919000396354925028
 GameObject:
   m_ObjectHideFlags: 0
