@@ -637,7 +637,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498958388774280524, guid: d102b2cdc8f06d140932495e90a637c0, type: 3}
       propertyPath: m_Name
-      value: PlayButton
+      value: RetryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2258288148845372910, guid: d102b2cdc8f06d140932495e90a637c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainGame
       objectReference: {fileID: 0}
     - target: {fileID: 7787038911405074810, guid: d102b2cdc8f06d140932495e90a637c0, type: 3}
       propertyPath: m_Pivot.x
