@@ -72,7 +72,8 @@ public class TutorialController : MonoBehaviour
         //Change tutorial text if in the dodgeTest state.
         if(state == 0)
         {
-            tutorialText.text = "\r\nControls: A/Left Arrow to Move Left, D/Right Arrow to Move Right. \nObjective: Dodge the falling orbs. \nStage Transition: Click \"Next\" to proceed to the next stage";
+            healthDisplay.SetActive(false);
+            tutorialText.text = "\r\nControls: A/Left Arrow to Move Left, D/Right Arrow to Move Right. \nObjective: Dodge the falling orbs.";
             prevButton.interactable = false;
         }
         else
@@ -83,15 +84,17 @@ public class TutorialController : MonoBehaviour
         if (state == 1)
         {
             healthDisplay.SetActive(true);
-            tutorialText.text = "In the lower left corner is your health. Getting hit by an orb will cause you to lose health. Avoid the orbs for long enough, and it'll regenerate over time.";
+            tutorialText.text = "Health is in lower left corner; getting hit by orb reduces it, avoid orbs for regeneration.";
         }
 
         //Set the spawner to spawn destructible enemies, change tutorial text, & enable player shooting if in the shootingTest state.
         if(state == 2)
         {
+            //It was merging with the text thus I disabled it
+            healthDisplay.SetActive(false);
             //verticalEnemySpawner.spawnDestructible = true;
             shoot.enabled = true;
-            tutorialText.text = "Space to shoot projectiles that can destroy yellow orbs. Only these orbs can be destroyed. Destroying them rewards a large score bonus. The number on the orb represents how much health it has left until it's destroyed.";
+            tutorialText.text = "\r\nUse Space to shoot projectiles, destroying yellow orbs for a large score bonus. Orb number indicates remaining health";
 
             spawnDestructibleEnemy = true;
         }
@@ -109,7 +112,7 @@ public class TutorialController : MonoBehaviour
         {
             LSD.enabled = true;
             LSDVisualizer.SetActive(true);
-            tutorialText.text = "Dodge orbs just before they touch you for a score bonus. When this occurs, you'll hear a dinging noise. The red rectangle shows the area an orb needs to be in for this bonus.";
+            tutorialText.text = "Dodge orbs at the last second for score bonus; dinging sound indicates success. Red rectangle marks bonus area.";
             nextButton.interactable = false;
             exitButton.interactable = true;
             Init.beenToTutorial = true;
