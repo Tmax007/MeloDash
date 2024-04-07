@@ -3642,6 +3642,9 @@ MonoBehaviour:
   snapPoint: {fileID: 1176753839}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 2
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 0.6862745, b: 0, a: 1}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -3659,6 +3662,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1176753839}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 0.6862745, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   descentSpeed: 2
   beatTimestamps: []
   currentBeatIndex: 0
@@ -3683,7 +3689,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 3750c318f40cab44a97d3a81beaefeb3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3705,7 +3711,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2126499672, guid: 7a1834f74288e954badacf0aaf3d2e1d, type: 3}
-  m_Color: {r: 0.8207547, g: 0.61549056, b: 0.17344245, a: 1}
+  m_Color: {r: 1, g: 0.6862745, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
