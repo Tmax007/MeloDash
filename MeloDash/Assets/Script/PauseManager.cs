@@ -7,6 +7,7 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pauseScreen;
     public float countdownDuration = 3f;
+    public AudioSource music;
     private bool isPaused = false;
 
     private void Start()
@@ -39,12 +40,14 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0f; // Pause the game
         pauseScreen.SetActive(true); // Show the pause screen
+        music.Pause();
     }
 
     private void ResumeGame()
     {
         Time.timeScale = 1f; // Resume the game
         pauseScreen.SetActive(false); // Hide the pause screen
+        music.Play();
     }
 
     public void QuitToMainMenu()
