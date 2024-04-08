@@ -54,6 +54,8 @@ public class TutorialController : MonoBehaviour
 
         timeTillSpawn -= Time.deltaTime;
 
+        Debug.Log("T" + Time.deltaTime);
+
         if(timeTillSpawn <= 0 ) 
         { 
             if(spawnDestructibleEnemy )
