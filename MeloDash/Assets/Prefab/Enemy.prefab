@@ -166,7 +166,6 @@ MonoBehaviour:
   endReachedPointValue: 1
   destructiblePointValue: 0
   destructionAnimationPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-  trailRenderer: {fileID: 0}
 --- !u!95 &3630384172662279510
 Animator:
   serializedVersion: 5
