@@ -326,7 +326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tutorial
+  m_text: Prelude
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47bc0adadf63dac48abc27a32ed51b87, type: 2}
   m_sharedMaterial: {fileID: 1518695415823751583, guid: 47bc0adadf63dac48abc27a32ed51b87, type: 2}
@@ -696,8 +696,7 @@ GameObject:
   - component: {fileID: 1220776087}
   - component: {fileID: 1220776086}
   - component: {fileID: 1220776085}
-  - component: {fileID: 1220776084}
-  - component: {fileID: 1220776083}
+  - component: {fileID: 1220776088}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -725,30 +724,6 @@ RectTransform:
   m_AnchoredPosition: {x: -48.599854, y: -19.299927}
   m_SizeDelta: {x: 160, y: 55.71997}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &1220776083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220776081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0dfacc791bb2b418665ade322b713b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1220776084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220776081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d656c421c828164faa6dc4a2e79f1c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1220776085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,21 +768,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1220776084}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: loadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: MainMenu
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1220776083}
-        m_TargetAssemblyTypeName: TimeCounter, Assembly-CSharp
-        m_MethodName: logTime
+      - m_Target: {fileID: 1220776088}
+        m_TargetAssemblyTypeName: QuitButton, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -816,7 +779,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1220776086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,6 +818,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220776081}
   m_CullTransparentMesh: 1
+--- !u!114 &1220776088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220776081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0962f53aee61a4992e855055a7b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1273742642
 GameObject:
   m_ObjectHideFlags: 0

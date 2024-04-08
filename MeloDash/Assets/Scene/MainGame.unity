@@ -4005,6 +4005,7 @@ GameObject:
   - component: {fileID: 1391843504}
   - component: {fileID: 1391843503}
   - component: {fileID: 1391843506}
+  - component: {fileID: 1391843507}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4137,6 +4138,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1391843507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391843502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19cc8672de40581448c90c24a45348f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1403695748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4166,9 +4179,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1413250449}
     - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1391843504}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 1391843507}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 611046101}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: shakeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2867755797096381560, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: fireRate
       value: 0.2
@@ -4245,6 +4274,10 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 611046101}
+    - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: hurtAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 7cbafc1dee601a449893121178187b53, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

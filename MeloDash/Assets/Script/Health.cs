@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,11 +34,18 @@ public class Health : MonoBehaviour
 
     AudioSource[] damageSound;
 
+    Animator playerAnimator;
+    public AnimationClip hurtAnimation; 
+
+
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = healthNum;
         regenerating = false;
+
+        // Get the Animator component of the player GameObject
+        playerAnimator = GetComponent<Animator>();
 
         if (gameObject.name == "Player")
         {
@@ -83,7 +91,6 @@ public class Health : MonoBehaviour
 
                 TelemetryLogger.Log(this, "PlayerDeath", data);
             }
-
         }
 
         if(gameObject.name == "Player")
@@ -125,6 +132,8 @@ public class Health : MonoBehaviour
 
                 TelemetryLogger.Log(this, "PlayerDamage", data);
             }
+            // Play the hurt animation directly
+            playerAnimator.Play(hurtAnimation.name);
         }
     }
 
