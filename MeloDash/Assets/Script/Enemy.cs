@@ -2,27 +2,28 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public ParticleSystem destructionParticles;
     private Vector3 destination;
     private float descentSpeed;
-
     private bool reachedSnapPoint = false;
 
     public ScoreManager scoreManager;
-
     public int endReachedPointValue;
     public int destructiblePointValue;
 
-    AudioSource destructionSound;
+    public GameObject destructionAnimationPrefab; // Prefab with the destruction animation
+    
+    //public TrailRenderer trailRenderer; // Reference to the Trail Renderer component
 
     void Start()
     {
         // Find the ScoreManager GameObject and get its ScoreManager component
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
-        destructionParticles = GameObject.FindObjectOfType<ParticleSystem>();
-
-        //Debug.Log(gameObject.layer);
+        /* Disable the Trail Renderer initially
+        if (trailRenderer != null)
+        {
+            trailRenderer.enabled = false;
+        }*/
     }
 
     // Set destination point for enemy to move towards
@@ -45,17 +46,21 @@ public class Enemy : MonoBehaviour
             // Move towards destination point
             transform.position = Vector3.MoveTowards(transform.position, destination, descentSpeed * Time.deltaTime);
 
+            /*// Enable the Trail Renderer when the enemy starts moving
+            if (trailRenderer != null && !trailRenderer.enabled)
+            {
+                trailRenderer.enabled = true;
+            }*/
+
             // Check if enemy has reached the destination
             if (transform.position == destination)
             {
                 reachedSnapPoint = true;
 
-                // Trigger particle system
-                if (destructionParticles != null)
+                // Play destruction animation
+                if (destructionAnimationPrefab != null)
                 {
-                    // Set the position of the particle system to the enemy's position
-                    destructionParticles.transform.position = transform.position;
-                    destructionParticles.Play();
+                    Instantiate(destructionAnimationPrefab, transform.position, Quaternion.identity);
                 }
 
                 // Destroy the enemy GameObject
@@ -78,7 +83,7 @@ public class Enemy : MonoBehaviour
     {
         if (scoreManager != null)
         {
-            if(reachedSnapPoint)
+            if (reachedSnapPoint)
             {
                 // Update the score when the enemy reaches the snap point
                 scoreManager.UpdateScore(endReachedPointValue);

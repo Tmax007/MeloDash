@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour
 
     Health targetHealth;
 
+    public GameObject destructionAnimationPrefab;
+
     public void SetSpeed(float speed)
     {
         this.speed = speed;
@@ -33,18 +35,20 @@ public class Projectile : MonoBehaviour
 
         // Check for collision with enemies
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f, enemyLayer);
+
         foreach (Collider2D hit in hits)
         {
             // TO SHAUN: Just changed the layer for the destructible enemy so that only it will be destroyed
 
             targetHealth = hit.GetComponent<Health>();
 
-            if(targetHealth.healthNum == 0)
+            if (targetHealth.healthNum == 0)
             {
+                // Play destruction animation
+                Instantiate(destructionAnimationPrefab, transform.position, Quaternion.identity);
                 playershoot.enemiesDestroyed++;
             }
-
-            //Destroy the projectile
+            
         }
     }
 }

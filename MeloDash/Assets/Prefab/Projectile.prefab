@@ -164,3 +164,4 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  destructionAnimationPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}

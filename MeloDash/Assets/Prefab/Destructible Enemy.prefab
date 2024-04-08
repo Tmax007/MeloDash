@@ -186,10 +186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62da67681ed4aa9489283c322251fc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructionParticles: {fileID: 0}
   scoreManager: {fileID: 0}
   endReachedPointValue: 0
   destructiblePointValue: 20
+  destructionAnimationPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
 --- !u!82 &7171528317256980519
 AudioSource:
   m_ObjectHideFlags: 0

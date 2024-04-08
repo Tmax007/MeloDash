@@ -162,10 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62da67681ed4aa9489283c322251fc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructionParticles: {fileID: 0}
   scoreManager: {fileID: 0}
   endReachedPointValue: 1
   destructiblePointValue: 0
+  destructionAnimationPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  trailRenderer: {fileID: 0}
 --- !u!95 &3630384172662279510
 Animator:
   serializedVersion: 5
