@@ -377,6 +377,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3923953794396212695, guid: ad3216cb73521834d9ab2a4a13ed7691, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39fbad40cddaec94196b2768dba204a5, type: 2}
     - target: {fileID: 5313404446785888203, guid: ad3216cb73521834d9ab2a4a13ed7691, type: 3}
       propertyPath: m_Name
       value: DestructionParticleSystem
@@ -2249,6 +2253,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 769210905}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: shakeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981282595780893421, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: enemyMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -2316,6 +2332,10 @@ PrefabInstance:
       propertyPath: regenTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
+      propertyPath: hurtAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 7cbafc1dee601a449893121178187b53, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2480,6 +2500,10 @@ MonoBehaviour:
   displacementY: 0.68
   dodgeNum: 0
   scoreManager: {fileID: 0}
+  LSDSound: []
+  shakeDuration: 0.5
+  shakeMagnitude: 0.1
+  mainCamera: {fileID: 0}
 --- !u!114 &1231673239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,6 +2607,7 @@ MonoBehaviour:
   currentTime: 0
   healthUI: {fileID: 0}
   scoreManager: {fileID: 0}
+  hurtAnimation: {fileID: 0}
 --- !u!114 &1231673243
 MonoBehaviour:
   m_ObjectHideFlags: 0
