@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public int endReachedPointValue;
     public int destructiblePointValue;
 
-    public GameObject destructionAnimationPrefab; // Prefab with the destruction animation
+    public GameObject destructionAnimationPrefab; 
     
     //public TrailRenderer trailRenderer; // Reference to the Trail Renderer component
 
@@ -60,7 +60,9 @@ public class Enemy : MonoBehaviour
                 // Play destruction animation
                 if (destructionAnimationPrefab != null)
                 {
-                    Instantiate(destructionAnimationPrefab, transform.position, Quaternion.identity);
+                    var copy= Instantiate(destructionAnimationPrefab, transform.position, Quaternion.identity);
+                    // Destroy destruction animation after a delay
+                    Destroy(copy, 2f);
                 }
 
                 // Destroy the enemy GameObject
