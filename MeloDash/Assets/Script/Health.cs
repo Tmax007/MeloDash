@@ -56,11 +56,11 @@ public class Health : MonoBehaviour
             if(SceneManager.GetActiveScene().name == "MainGame")
             {
                 Init.run++;
-            }
 
-            //Sets the player to die after 125 seconds so that data can still be logged in winning attempts during testing.
-            //Being set to occur after 125 seconds means that it can only happen after the player's gotten through everything.
-            //Invoke("selfDestruct", 125);
+                //Sets the player to die after 125 seconds so that data can still be logged in winning attempts during testing.
+                //Being set to occur after 125 seconds means that it can only happen after the player's gotten through everything.
+                Invoke("selfDestruct", 125);
+            }
 
             TelemetryLogger.Log(this, "Start game.");
         }

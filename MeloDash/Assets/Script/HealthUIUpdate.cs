@@ -26,7 +26,7 @@ public class HealthUIUpdate : MonoBehaviour
 
         startText = text.text;
 
-        Invoke("endGame", 125);
+        //Invoke("endGame", 125);
     }
 
     void Update()
