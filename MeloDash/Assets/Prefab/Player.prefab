@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1720491468043027648}
   projectilePrefab: {fileID: 932383172355896751, guid: 09eb6d1efa1a8824bbc0cacab14a1228, type: 3}
-  fireRate: 0.15
+  fireRate: 0.1
   projectileSpeed: 10
   enemyLayer:
     serializedVersion: 2
