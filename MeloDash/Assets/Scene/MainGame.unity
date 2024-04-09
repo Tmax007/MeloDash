@@ -538,6 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 1339140650}
   countdownDuration: 3
+  music: {fileID: 0}
 --- !u!4 &206698318
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,7 +1385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af35a4bd7ca861048b8377cdff2a7745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   scoreText: {fileID: 1655436982}
 --- !u!4 &611046102
 Transform:
@@ -1748,6 +1748,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1413250449}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
@@ -1835,6 +1838,9 @@ MonoBehaviour:
   snapPoint: {fileID: 1413250449}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -2753,6 +2759,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1119333980}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
@@ -2840,6 +2849,9 @@ MonoBehaviour:
   snapPoint: {fileID: 1119333980}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -4389,6 +4401,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 741098181}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
@@ -4476,6 +4491,9 @@ MonoBehaviour:
   snapPoint: {fileID: 741098181}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -4994,7 +5012,7 @@ PrefabInstance:
       objectReference: {fileID: 1157564739}
     - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: healthNum
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6583135269309251805, guid: 29b98a5d6cc11e047b0c3f78e6d214d1, type: 3}
       propertyPath: scoreManager
@@ -5216,7 +5234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -17.999939, y: -20.99997}
+  m_AnchoredPosition: {x: -17.999939, y: -21}
   m_SizeDelta: {x: 166.72021, y: 47.44995}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1450187098
@@ -5685,6 +5703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 579460431}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
@@ -5704,6 +5725,9 @@ MonoBehaviour:
   snapPoint: {fileID: 579460431}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -5958,6 +5982,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1125497879}
   enemyPrefab: {fileID: 4601460923525205300, guid: 157b222a45451e540933b9fa340ed90b, type: 3}
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   descentSpeed: 3
   beatTimestamps: []
   currentBeatIndex: 0
@@ -6045,6 +6072,9 @@ MonoBehaviour:
   snapPoint: {fileID: 1125497879}
   destructibleEnemyPrefab: {fileID: 4601460923525205300, guid: 315ef36031f6aab4389365db21ad0443, type: 3}
   descentSpeed: 3
+  spawnerRenderer: {fileID: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
   beatTimestamps: []
   currentBeatIndex: 0
   spawnerIndex: 0
@@ -7045,7 +7075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af35a4bd7ca861048b8377cdff2a7745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   scoreText: {fileID: 1655436982}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -137,6 +137,7 @@ MonoBehaviour:
   currentTime: 0
   healthUI: {fileID: 0}
   scoreManager: {fileID: 0}
+  hurtAnimation: {fileID: 0}
 --- !u!50 &6249631443717596320
 Rigidbody2D:
   serializedVersion: 4
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1720491468043027648}
   projectilePrefab: {fileID: 932383172355896751, guid: 09eb6d1efa1a8824bbc0cacab14a1228, type: 3}
-  fireRate: 0.3
+  fireRate: 0.15
   projectileSpeed: 10
   enemyLayer:
     serializedVersion: 2
@@ -201,6 +202,10 @@ MonoBehaviour:
   displacementY: 0.68
   dodgeNum: 0
   scoreManager: {fileID: 0}
+  LSDSound: []
+  shakeDuration: 0.5
+  shakeMagnitude: 0.1
+  mainCamera: {fileID: 0}
 --- !u!61 &5486407495953075084
 BoxCollider2D:
   m_ObjectHideFlags: 0
